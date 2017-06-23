@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="agregaAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="alumno" type="tns:Alumno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Alumno">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="agregaAlumnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="eliminarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarAlumnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="entregaAlumnoDataSet">
+        <s:complexType />
+      </s:element>
+      <s:element name="entregaAlumnoDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entregaAlumnoDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="entregaLargoAlumno">
+        <s:complexType />
+      </s:element>
+      <s:element name="entregaLargoAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entregaLargoAlumnoResult" type="tns:ArrayOfAlumno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAlumno">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Alumno" nillable="true" type="tns:Alumno" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="entregaPosicionAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="entregaPosicionAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entregaPosicionAlumnoResult" type="tns:Alumno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarAlumnoResult" type="tns:Alumno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizaAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="alumno" type="tns:Alumno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizaAlumnoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="agregaAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:agregaAlumno" />
+  </wsdl:message>
+  <wsdl:message name="agregaAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:agregaAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="eliminarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="entregaAlumnoDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:entregaAlumnoDataSet" />
+  </wsdl:message>
+  <wsdl:message name="entregaAlumnoDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:entregaAlumnoDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="entregaLargoAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:entregaLargoAlumno" />
+  </wsdl:message>
+  <wsdl:message name="entregaLargoAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:entregaLargoAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="entregaPosicionAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:entregaPosicionAlumno" />
+  </wsdl:message>
+  <wsdl:message name="entregaPosicionAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:entregaPosicionAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="buscarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizaAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizaAlumno" />
+  </wsdl:message>
+  <wsdl:message name="actualizaAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizaAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsGuardaDatosAlumnosSoap">
+    <wsdl:operation name="agregaAlumno">
+      <wsdl:input message="tns:agregaAlumnoSoapIn" />
+      <wsdl:output message="tns:agregaAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAlumno">
+      <wsdl:input message="tns:eliminarAlumnoSoapIn" />
+      <wsdl:output message="tns:eliminarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="entregaAlumnoDataSet">
+      <wsdl:input message="tns:entregaAlumnoDataSetSoapIn" />
+      <wsdl:output message="tns:entregaAlumnoDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="entregaLargoAlumno">
+      <wsdl:input message="tns:entregaLargoAlumnoSoapIn" />
+      <wsdl:output message="tns:entregaLargoAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="entregaPosicionAlumno">
+      <wsdl:input message="tns:entregaPosicionAlumnoSoapIn" />
+      <wsdl:output message="tns:entregaPosicionAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarAlumno">
+      <wsdl:input message="tns:buscarAlumnoSoapIn" />
+      <wsdl:output message="tns:buscarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizaAlumno">
+      <wsdl:input message="tns:actualizaAlumnoSoapIn" />
+      <wsdl:output message="tns:actualizaAlumnoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsGuardaDatosAlumnosSoap" type="tns:wsGuardaDatosAlumnosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="agregaAlumno">
+      <soap:operation soapAction="http://tempuri.org/agregaAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAlumno">
+      <soap:operation soapAction="http://tempuri.org/eliminarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="entregaAlumnoDataSet">
+      <soap:operation soapAction="http://tempuri.org/entregaAlumnoDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="entregaLargoAlumno">
+      <soap:operation soapAction="http://tempuri.org/entregaLargoAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="entregaPosicionAlumno">
+      <soap:operation soapAction="http://tempuri.org/entregaPosicionAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarAlumno">
+      <soap:operation soapAction="http://tempuri.org/buscarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizaAlumno">
+      <soap:operation soapAction="http://tempuri.org/actualizaAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsGuardaDatosAlumnosSoap12" type="tns:wsGuardaDatosAlumnosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="agregaAlumno">
+      <soap12:operation soapAction="http://tempuri.org/agregaAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/eliminarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="entregaAlumnoDataSet">
+      <soap12:operation soapAction="http://tempuri.org/entregaAlumnoDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="entregaLargoAlumno">
+      <soap12:operation soapAction="http://tempuri.org/entregaLargoAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="entregaPosicionAlumno">
+      <soap12:operation soapAction="http://tempuri.org/entregaPosicionAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/buscarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizaAlumno">
+      <soap12:operation soapAction="http://tempuri.org/actualizaAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsGuardaDatosAlumnos">
+    <wsdl:port name="wsGuardaDatosAlumnosSoap" binding="tns:wsGuardaDatosAlumnosSoap">
+      <soap:address location="http://localhost:7278/wsGuardaDatosAlumnos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsGuardaDatosAlumnosSoap12" binding="tns:wsGuardaDatosAlumnosSoap12">
+      <soap12:address location="http://localhost:7278/wsGuardaDatosAlumnos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

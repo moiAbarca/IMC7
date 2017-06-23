@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaConexion", "CapaConexion\CapaConexion.csproj", "{B3E85917-FF8A-4124-A041-ED0A0589ADC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDTO", "CapaDTO\CapaDTO.csproj", "{3E8C5720-BD36-4495-BD51-021AD51A0C88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{92BBED9F-40CF-4F5B-999F-462395375FCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaGUI", "CapaGUI\CapaGUI.csproj", "{3AD92B0B-6EEC-4028-9E46-9DFA6D5CF462}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD2E098F-A92F-4529-B465-165052A35531} = {CD2E098F-A92F-4529-B465-165052A35531}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CapaServicio", "CapaServicio\", "{CD2E098F-A92F-4529-B465-165052A35531}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{3e8c5720-bd36-4495-bd51-021ad51a0c88}|CapaDTO.dll;{92bbed9f-40cf-4f5b-999f-462395375fcf}|CapaNegocio.dll;{B3E85917-FF8A-4124-A041-ED0A0589ADC0}|CapaConexion.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_7278"
+		Debug.AspNetCompiler.PhysicalPath = "CapaServicio\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7278\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_7278"
+		Release.AspNetCompiler.PhysicalPath = "CapaServicio\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7278\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "7278"
+		SlnRelativePath = "CapaServicio\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3E85917-FF8A-4124-A041-ED0A0589ADC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E85917-FF8A-4124-A041-ED0A0589ADC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E85917-FF8A-4124-A041-ED0A0589ADC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E85917-FF8A-4124-A041-ED0A0589ADC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E8C5720-BD36-4495-BD51-021AD51A0C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E8C5720-BD36-4495-BD51-021AD51A0C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E8C5720-BD36-4495-BD51-021AD51A0C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E8C5720-BD36-4495-BD51-021AD51A0C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92BBED9F-40CF-4F5B-999F-462395375FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92BBED9F-40CF-4F5B-999F-462395375FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92BBED9F-40CF-4F5B-999F-462395375FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92BBED9F-40CF-4F5B-999F-462395375FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD92B0B-6EEC-4028-9E46-9DFA6D5CF462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD92B0B-6EEC-4028-9E46-9DFA6D5CF462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD92B0B-6EEC-4028-9E46-9DFA6D5CF462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD92B0B-6EEC-4028-9E46-9DFA6D5CF462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2E098F-A92F-4529-B465-165052A35531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2E098F-A92F-4529-B465-165052A35531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2E098F-A92F-4529-B465-165052A35531}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2E098F-A92F-4529-B465-165052A35531}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

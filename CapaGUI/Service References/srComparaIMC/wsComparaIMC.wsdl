@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="comparaIMC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="peso" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="talla" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="comparaIMCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="comparaIMCResult" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="comparaIMCSoapIn">
+    <wsdl:part name="parameters" element="tns:comparaIMC" />
+  </wsdl:message>
+  <wsdl:message name="comparaIMCSoapOut">
+    <wsdl:part name="parameters" element="tns:comparaIMCResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsComparaIMCSoap">
+    <wsdl:operation name="comparaIMC">
+      <wsdl:input message="tns:comparaIMCSoapIn" />
+      <wsdl:output message="tns:comparaIMCSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsComparaIMCSoap" type="tns:wsComparaIMCSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="comparaIMC">
+      <soap:operation soapAction="http://tempuri.org/comparaIMC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsComparaIMCSoap12" type="tns:wsComparaIMCSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="comparaIMC">
+      <soap12:operation soapAction="http://tempuri.org/comparaIMC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsComparaIMC">
+    <wsdl:port name="wsComparaIMCSoap" binding="tns:wsComparaIMCSoap">
+      <soap:address location="http://localhost:7278/wsComparaIMC.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsComparaIMCSoap12" binding="tns:wsComparaIMCSoap12">
+      <soap12:address location="http://localhost:7278/wsComparaIMC.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
