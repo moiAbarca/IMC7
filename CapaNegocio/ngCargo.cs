@@ -24,7 +24,7 @@ namespace CapaNegocio
             this.Conec1 = new Conexion();
             this.Conec1.NombreBaseDeDatos = "IMC";
             this.Conec1.NombreTabla = "Cargo";
-            this.Conec1.CadenaConexion = "Data Source=MOI5BEC;Initial Catalog=IMC;Persist Security Info=True;User ID=sa";
+            this.Conec1.CadenaConexion = "Server=127.0.0.1;Database=IMC;Trusted_Connection=True;";
         }
 
         public DataSet retornaCargoDataSet()
@@ -88,7 +88,7 @@ namespace CapaNegocio
             return auxListadoCargo;
         }
 
-        public Cargo buscaCargo(int Cod_Tipo_RRHH)
+        public Cargo buscaCargo(string Cod_Tipo_RRHH)
         {
             Cargo auxCargo = new Cargo();
             this.configurarConexion();
