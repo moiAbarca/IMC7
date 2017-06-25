@@ -128,6 +128,11 @@
     <Compile Include="frmTipoMedidaCorrectiva.Designer.cs">
       <DependentUpon>frmTipoMedidaCorrectiva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service References\srCalculaIMC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\srComparaIMC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +200,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\srCalculaIMC\wsCalculaIMC.wsdl" />
     <None Include="Service References\srComparaIMC\wsComparaIMC.wsdl" />
     <None Include="Service References\srGuardaDatosAlumnos\CapaGUI.srGuardaDatosAlumnos.Alumno.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -209,6 +215,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\srCalculaIMC\" />
     <WCFMetadataStorage Include="Service References\srComparaIMC\" />
     <WCFMetadataStorage Include="Service References\srGuardaDatosAlumnos\" />
   </ItemGroup>
@@ -251,6 +258,21 @@
       <Project>{92BBED9F-40CF-4F5B-999F-462395375FCF}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srCalculaIMC\wsCalculaIMC.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srCalculaIMC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srCalculaIMC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srCalculaIMC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

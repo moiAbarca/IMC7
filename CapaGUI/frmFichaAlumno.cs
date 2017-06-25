@@ -38,8 +38,21 @@ namespace CapaGUI
 
         public void generaIMC(double peso, double talla)
         {
-            double tallaMEtro = talla / 100;
-            txtValorIMC.Text = Convert.ToString((peso / (Math.Pow(tallaMEtro, 2))));
+            srCalculaIMC.wsCalculaIMCSoapClient auxSwCalculaIMC = new srCalculaIMC.wsCalculaIMCSoapClient();
+            double pesoLocal = Convert.ToDouble(txtPeso.Text);
+            double alturaLocal = Convert.ToDouble(txtEstatura.Text);
+            double IMC;
+
+            if (txtEstatura.Text.Trim().Length == 0 && txtPeso.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Los campos altura y peso no pueden estar vacíos");
+            }
+            else
+            {
+                IMC = auxSwCalculaIMC.calculaIMC(pesoLocal, alturaLocal);
+
+                txtValorIMC.Text = Convert.ToString(IMC);
+            }
         }
 
         private void txtPeso_TextChanged(object sender, EventArgs e)

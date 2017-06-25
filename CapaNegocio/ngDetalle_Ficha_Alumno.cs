@@ -162,7 +162,14 @@ namespace CapaNegocio
             return auxDetalle_Ficha_Alumno;
         }
 
-      
+        public double calculaIMC(double peso, double altura)
+        {
+            double IMCcalculado;
+            double tallaMEtro = altura / 100;
+            return IMCcalculado = (peso / (Math.Pow(tallaMEtro, 2)));
+        }
+
+
 
     }
 }

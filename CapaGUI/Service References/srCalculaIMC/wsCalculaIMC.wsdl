@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="calculaIMC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="peso" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="altura" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="calculaIMCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="calculaIMCResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="calculaIMCSoapIn">
+    <wsdl:part name="parameters" element="tns:calculaIMC" />
+  </wsdl:message>
+  <wsdl:message name="calculaIMCSoapOut">
+    <wsdl:part name="parameters" element="tns:calculaIMCResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsCalculaIMCSoap">
+    <wsdl:operation name="calculaIMC">
+      <wsdl:input message="tns:calculaIMCSoapIn" />
+      <wsdl:output message="tns:calculaIMCSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsCalculaIMCSoap" type="tns:wsCalculaIMCSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="calculaIMC">
+      <soap:operation soapAction="http://tempuri.org/calculaIMC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsCalculaIMCSoap12" type="tns:wsCalculaIMCSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="calculaIMC">
+      <soap12:operation soapAction="http://tempuri.org/calculaIMC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsCalculaIMC">
+    <wsdl:port name="wsCalculaIMCSoap" binding="tns:wsCalculaIMCSoap">
+      <soap:address location="http://localhost:7278/wsCalculaIMC.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsCalculaIMCSoap12" binding="tns:wsCalculaIMCSoap12">
+      <soap12:address location="http://localhost:7278/wsCalculaIMC.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
