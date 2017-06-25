@@ -41,8 +41,9 @@ namespace CapaNegocio
         {
             this.configurarConexion();
             this.Conec1.CadenaSQL = "INSERT INTO Detalle_Ficha_Alumno (Cod_Detalle_Ficha, Cod_Ficha, Valor_IMC, Clasificacion_IMC, Fecha_Revision, Fecha_Proxima_Revision) " +
-                                     " VALUES ('" + detalle_Ficha_Alumno.Cod_Detalle_Ficha + "','"+detalle_Ficha_Alumno.Cod_Ficha + "',CAST('" +
-                                      detalle_Ficha_Alumno.Valor_IMC + "' AS FLOAT),'" + detalle_Ficha_Alumno.Clasificacion_IMC + "','" + detalle_Ficha_Alumno.Fecha_Revision + "','" + detalle_Ficha_Alumno.Fecha_Proxima_Revision + "');";
+                                     " VALUES ('" + detalle_Ficha_Alumno.Cod_Detalle_Ficha + "','" + detalle_Ficha_Alumno.Cod_Ficha + 
+                                     ",''CAST(" + detalle_Ficha_Alumno.Valor_IMC + " AS FLOAT)'','" 
+                                      + detalle_Ficha_Alumno.Clasificacion_IMC + "','" + detalle_Ficha_Alumno.Fecha_Revision + "','" + detalle_Ficha_Alumno.Fecha_Proxima_Revision + "');";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
 
