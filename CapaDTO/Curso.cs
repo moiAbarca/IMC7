@@ -14,7 +14,6 @@ namespace CapaDTO
         private string _cod_Curso;
         private string _nombreCurso;
         private string _jornada;
-        private string _cod_Periodo;
         private string _cod_Colegio;
 
         public string Cod_Curso
@@ -56,18 +55,7 @@ namespace CapaDTO
             }
         }
 
-        public string Cod_Periodo
-        {
-            get
-            {
-                return _cod_Periodo;
-            }
-
-            set
-            {
-                _cod_Periodo = value;
-            }
-        }
+        
 
         public string Cod_Colegio
         {

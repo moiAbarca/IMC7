@@ -24,7 +24,7 @@ namespace CapaNegocio
             this.Conec1 = new Conexion();
             this.Conec1.NombreBaseDeDatos = "IMC";
             this.Conec1.NombreTabla = "Curso";
-            this.Conec1.CadenaConexion = "Data Source=MOI5BEC;Initial Catalog=IMC;Persist Security Info=True;User ID=sa";
+            this.Conec1.CadenaConexion = "Server=127.0.0.1;Database=IMC;Trusted_Connection=True;";
         }
 
         public DataSet retornaCursoDataSet()
@@ -40,9 +40,9 @@ namespace CapaNegocio
         public void ingresaCurso(Curso curso)
         {
             this.configurarConexion();
-            this.Conec1.CadenaSQL = "INSERT INTO Curso (Cod_Curso, Curso, Jornada, Cod_Periodo, Cod_Colegio) " +
+            this.Conec1.CadenaSQL = "INSERT INTO Curso (Cod_Curso, NombreCurso, Jornada, Cod_Colegio) " +
                                      " VALUES ('" + curso.Cod_Curso + "','" + curso.NombreCurso + "','" +
-                                      curso.Jornada + "','" + curso.Cod_Periodo + "','" + curso.Cod_Colegio + "');";
+                                      curso.Jornada + "','" + curso.Cod_Colegio + "');";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
 
@@ -51,9 +51,9 @@ namespace CapaNegocio
         public void actualizarCurso(Curso curso)
         {
             this.configurarConexion();
-            this.Conec1.CadenaSQL = "UPDATE Curso set Curso = '" + curso.NombreCurso +
+            this.Conec1.CadenaSQL = "UPDATE Curso set NombreCurso = '" + curso.NombreCurso +
                                      "', Jornada = '" + curso.Jornada +
-                                     "', Cod_Periodo = '" + curso.Cod_Periodo +
+                                     
                                      "', Cod_Colegio = '" + curso.Cod_Colegio +
                                      "' WHERE Cod_Curso = '" + curso.Cod_Curso + "';";
             this.Conec1.EsSelect = false;
@@ -85,7 +85,7 @@ namespace CapaNegocio
                 auxCurso.Cod_Curso = (String)dr["Cod_Curso"];
                 auxCurso.NombreCurso = (String)dr["Curso"];
                 auxCurso.Jornada = (String)dr["Jornada"];
-                auxCurso.Cod_Periodo = (String)dr["Cod_Periodo"];
+                
                 auxCurso.Cod_Colegio = (String)dr["Cod_Colegio"];
                 auxListadoCurso.Add(auxCurso);
             } //Fin for
@@ -108,9 +108,8 @@ namespace CapaNegocio
             try
             {
                 auxCurso.Cod_Curso = (String)dt.Rows[0]["Cod_Curso"];
-                auxCurso.NombreCurso = (String)dt.Rows[0]["Curso"];
+                auxCurso.NombreCurso = (String)dt.Rows[0]["NombreCurso"];
                 auxCurso.Jornada = (String)dt.Rows[0]["Jornada"];
-                auxCurso.Cod_Periodo = (String)dt.Rows[0]["Cod_Periodo"];
                 auxCurso.Cod_Colegio = (String)dt.Rows[0]["Cod_Colegio"];
                
             }
@@ -119,7 +118,7 @@ namespace CapaNegocio
                 auxCurso.Cod_Curso = String.Empty;
                 auxCurso.NombreCurso = String.Empty;
                 auxCurso.Jornada = String.Empty;
-                auxCurso.Cod_Periodo = String.Empty;
+                
                 auxCurso.Cod_Colegio = String.Empty;
 
             }
@@ -143,7 +142,7 @@ namespace CapaNegocio
                 auxCurso.Cod_Curso = (String)dt.Rows[0]["Cod_Curso"];
                 auxCurso.NombreCurso = (String)dt.Rows[0]["Curso"];
                 auxCurso.Jornada = (String)dt.Rows[0]["Jornada"];
-                auxCurso.Cod_Periodo = (String)dt.Rows[0]["Cod_Periodo"];
+                
                 auxCurso.Cod_Colegio = (String)dt.Rows[0]["Cod_Colegio"];
 
             }
@@ -152,7 +151,7 @@ namespace CapaNegocio
                 auxCurso.Cod_Curso = String.Empty;
                 auxCurso.NombreCurso = String.Empty;
                 auxCurso.Jornada = String.Empty;
-                auxCurso.Cod_Periodo = String.Empty;
+                
                 auxCurso.Cod_Colegio = String.Empty;
             }
 

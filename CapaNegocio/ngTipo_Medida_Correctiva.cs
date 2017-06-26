@@ -25,7 +25,7 @@ namespace CapaNegocio
             this.Conec1 = new Conexion();
             this.Conec1.NombreBaseDeDatos = "IMC";
             this.Conec1.NombreTabla = "Tipo_Medida_Correctiva";
-            this.Conec1.CadenaConexion = "Data Source=MOI5BEC;Initial Catalog=IMC;Persist Security Info=True;User ID=sa";
+            this.Conec1.CadenaConexion = "Server=127.0.0.1;Database=IMC;Trusted_Connection=True;";
         }
 
         public DataSet retornaTipo_Medida_CorrectivaDataSet()

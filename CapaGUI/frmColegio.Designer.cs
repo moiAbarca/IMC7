@@ -36,8 +36,11 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtGuardar = new System.Windows.Forms.Button();
-            this.txtListar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +86,7 @@
             this.txtCod_Colegio.Name = "txtCod_Colegio";
             this.txtCod_Colegio.Size = new System.Drawing.Size(242, 20);
             this.txtCod_Colegio.TabIndex = 4;
+            this.txtCod_Colegio.Leave += new System.EventHandler(this.txtCod_Colegio_Leave);
             // 
             // txtNombre
             // 
@@ -108,31 +112,66 @@
             this.txtTelefono.Size = new System.Drawing.Size(242, 20);
             this.txtTelefono.TabIndex = 7;
             // 
-            // txtGuardar
+            // btnLimpiar
             // 
-            this.txtGuardar.Location = new System.Drawing.Point(104, 166);
-            this.txtGuardar.Name = "txtGuardar";
-            this.txtGuardar.Size = new System.Drawing.Size(75, 23);
-            this.txtGuardar.TabIndex = 8;
-            this.txtGuardar.Text = "Guardar";
-            this.txtGuardar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(261, 165);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(65, 23);
+            this.btnLimpiar.TabIndex = 40;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // txtListar
+            // btnEliminar
             // 
-            this.txtListar.Location = new System.Drawing.Point(226, 166);
-            this.txtListar.Name = "txtListar";
-            this.txtListar.Size = new System.Drawing.Size(75, 23);
-            this.txtListar.TabIndex = 9;
-            this.txtListar.Text = "Listar";
-            this.txtListar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(15, 165);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(65, 23);
+            this.btnEliminar.TabIndex = 39;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // Colegio
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(343, 165);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(65, 23);
+            this.btnListar.TabIndex = 38;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(97, 165);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(65, 23);
+            this.btnGuardar.TabIndex = 37;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(179, 165);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(65, 23);
+            this.btnActualizar.TabIndex = 41;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // frmColegio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 223);
-            this.Controls.Add(this.txtListar);
-            this.Controls.Add(this.txtGuardar);
+            this.ClientSize = new System.Drawing.Size(428, 209);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtNombre);
@@ -141,7 +180,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Colegio";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmColegio";
             this.Text = "Colegio";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,7 +200,10 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Button txtGuardar;
-        private System.Windows.Forms.Button txtListar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

@@ -41,7 +41,7 @@ namespace CapaDTO
         }
         #endregion
 
-        public List<Cargo> ObtenerPersonal(int nCargo)
+        public List<Cargo> ObtenerCargo(int nCargo)
         {
             List<Cargo> lst = new List<Cargo>();
             return lst;

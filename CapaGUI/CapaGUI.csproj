@@ -90,6 +90,24 @@
     <Compile Include="frmListaCurso.Designer.cs">
       <DependentUpon>frmListaCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarCargo.Designer.cs">
+      <DependentUpon>frmListarCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarColegio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarColegio.Designer.cs">
+      <DependentUpon>frmListarColegio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarCurso.Designer.cs">
+      <DependentUpon>frmListarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +119,6 @@
     </Compile>
     <Compile Include="frmMedidaCorrectiva.Designer.cs">
       <DependentUpon>frmMedidaCorrectiva.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPeriodo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPeriodo.Designer.cs">
-      <DependentUpon>frmPeriodo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRRHH.cs">
       <SubType>Form</SubType>
@@ -164,14 +176,20 @@
     <EmbeddedResource Include="frmListaCurso.resx">
       <DependentUpon>frmListaCurso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListarCargo.resx">
+      <DependentUpon>frmListarCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarColegio.resx">
+      <DependentUpon>frmListarColegio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarCurso.resx">
+      <DependentUpon>frmListarCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMedidaCorrectiva.resx">
       <DependentUpon>frmMedidaCorrectiva.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPeriodo.resx">
-      <DependentUpon>frmPeriodo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRRHH.resx">
       <DependentUpon>frmRRHH.cs</DependentUpon>

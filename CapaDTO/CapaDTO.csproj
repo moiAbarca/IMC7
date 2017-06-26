@@ -49,7 +49,6 @@
     <Compile Include="Enrolados.cs" />
     <Compile Include="Lista_Curso.cs" />
     <Compile Include="Medida_Correctiva.cs" />
-    <Compile Include="Periodo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RRHH.cs" />
     <Compile Include="Tipo_Medida_Correctiva.cs" />

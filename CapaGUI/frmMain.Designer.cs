@@ -34,7 +34,6 @@
             this.mantenedorColegioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosColegioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.periodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenedorAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosAlumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +81,6 @@
             this.mantenedorColegioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datosColegioToolStripMenuItem,
             this.cursoToolStripMenuItem,
-            this.periodoToolStripMenuItem,
             this.listaCursoToolStripMenuItem});
             this.mantenedorColegioToolStripMenuItem.Name = "mantenedorColegioToolStripMenuItem";
             this.mantenedorColegioToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -101,13 +99,6 @@
             this.cursoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cursoToolStripMenuItem.Text = "Curso";
             this.cursoToolStripMenuItem.Click += new System.EventHandler(this.cursoToolStripMenuItem_Click);
-            // 
-            // periodoToolStripMenuItem
-            // 
-            this.periodoToolStripMenuItem.Name = "periodoToolStripMenuItem";
-            this.periodoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.periodoToolStripMenuItem.Text = "Periodo";
-            this.periodoToolStripMenuItem.Click += new System.EventHandler(this.periodoToolStripMenuItem_Click);
             // 
             // listaCursoToolStripMenuItem
             // 
@@ -174,14 +165,14 @@
             // cargoToolStripMenuItem
             // 
             this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.cargoToolStripMenuItem.Text = "Cargo";
             this.cargoToolStripMenuItem.Click += new System.EventHandler(this.cargoToolStripMenuItem_Click);
             // 
             // rRHHToolStripMenuItem
             // 
             this.rRHHToolStripMenuItem.Name = "rRHHToolStripMenuItem";
-            this.rRHHToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rRHHToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.rRHHToolStripMenuItem.Text = "RRHH";
             this.rRHHToolStripMenuItem.Click += new System.EventHandler(this.rRHHToolStripMenuItem_Click);
             // 
@@ -212,7 +203,6 @@
         private System.Windows.Forms.ToolStripMenuItem mantenedorColegioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datosColegioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem periodoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenedorAlumnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datosAlumnosToolStripMenuItem;

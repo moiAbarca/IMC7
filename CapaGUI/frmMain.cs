@@ -31,8 +31,7 @@ namespace CapaGUI
 
         private void periodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPeriodo pCliente = new frmPeriodo();
-            pCliente.ShowDialog();
+            
         }
 
         private void listaCursoToolStripMenuItem_Click(object sender, EventArgs e)
