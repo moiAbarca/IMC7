@@ -12,14 +12,14 @@ namespace CapaDTO
         public Lista_Curso() { }
 
         #region Propiedades
-        private int _idListaCurso;
+        private string _idListaCurso;
         private string _rut;
         private string _cod_Curso;
         private int _ano;
         private string _semestre;
         
 
-        public int IdListaCurso
+        public string IdListaCurso
         {
             get
             {

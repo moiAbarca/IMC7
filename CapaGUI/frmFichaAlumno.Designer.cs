@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gboxCabecera = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.dtFechaActualizacion = new System.Windows.Forms.DateTimePicker();
             this.cmbIdListaCurso = new System.Windows.Forms.ComboBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
@@ -38,7 +40,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtGuardarCabecera = new System.Windows.Forms.Button();
             this.txtRutRRHH = new System.Windows.Forms.TextBox();
             this.txtCod_Ficha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,14 +59,26 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.gboxCabecera.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxCabecera
             // 
+            this.gboxCabecera.Controls.Add(this.button1);
+            this.gboxCabecera.Controls.Add(this.button2);
+            this.gboxCabecera.Controls.Add(this.button3);
+            this.gboxCabecera.Controls.Add(this.button4);
+            this.gboxCabecera.Controls.Add(this.btnGuardar);
             this.gboxCabecera.Controls.Add(this.label11);
             this.gboxCabecera.Controls.Add(this.label3);
             this.gboxCabecera.Controls.Add(this.dtFechaActualizacion);
@@ -77,7 +90,6 @@
             this.gboxCabecera.Controls.Add(this.label7);
             this.gboxCabecera.Controls.Add(this.label8);
             this.gboxCabecera.Controls.Add(this.label5);
-            this.gboxCabecera.Controls.Add(this.txtGuardarCabecera);
             this.gboxCabecera.Controls.Add(this.txtRutRRHH);
             this.gboxCabecera.Controls.Add(this.txtCod_Ficha);
             this.gboxCabecera.Controls.Add(this.label4);
@@ -85,11 +97,29 @@
             this.gboxCabecera.Controls.Add(this.label1);
             this.gboxCabecera.Location = new System.Drawing.Point(12, 12);
             this.gboxCabecera.Name = "gboxCabecera";
-            this.gboxCabecera.Size = new System.Drawing.Size(526, 183);
+            this.gboxCabecera.Size = new System.Drawing.Size(526, 212);
             this.gboxCabecera.TabIndex = 0;
             this.gboxCabecera.TabStop = false;
             this.gboxCabecera.Text = "Cabecera";
             this.gboxCabecera.Enter += new System.EventHandler(this.gboxCabecera_Enter);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(491, 99);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(19, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "kg";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(489, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 13);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "cm";
             // 
             // dtFechaActualizacion
             // 
@@ -100,6 +130,7 @@
             // 
             // cmbIdListaCurso
             // 
+            this.cmbIdListaCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdListaCurso.FormattingEnabled = true;
             this.cmbIdListaCurso.Location = new System.Drawing.Point(103, 98);
             this.cmbIdListaCurso.Name = "cmbIdListaCurso";
@@ -168,15 +199,6 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Fecha Actualización";
             // 
-            // txtGuardarCabecera
-            // 
-            this.txtGuardarCabecera.Location = new System.Drawing.Point(10, 137);
-            this.txtGuardarCabecera.Name = "txtGuardarCabecera";
-            this.txtGuardarCabecera.Size = new System.Drawing.Size(214, 23);
-            this.txtGuardarCabecera.TabIndex = 30;
-            this.txtGuardarCabecera.Text = "Guardar";
-            this.txtGuardarCabecera.UseVisualStyleBackColor = true;
-            // 
             // txtRutRRHH
             // 
             this.txtRutRRHH.Location = new System.Drawing.Point(103, 60);
@@ -199,9 +221,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(7, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 26;
-            this.label4.Text = "IdListaCurso";
+            this.label4.Text = "ListaCurso";
             // 
             // label2
             // 
@@ -223,6 +245,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnActualizar);
+            this.groupBox1.Controls.Add(this.btnLimpiar);
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(this.btnListar);
             this.groupBox1.Controls.Add(this.dtFechaProxRevision);
             this.groupBox1.Controls.Add(this.dtIFechaRevision);
             this.groupBox1.Controls.Add(this.label15);
@@ -236,9 +262,9 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(12, 202);
+            this.groupBox1.Location = new System.Drawing.Point(12, 230);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(526, 184);
+            this.groupBox1.Size = new System.Drawing.Size(526, 212);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle";
@@ -305,9 +331,9 @@
             // 
             // txtGuardarDetalle
             // 
-            this.txtGuardarDetalle.Location = new System.Drawing.Point(358, 137);
+            this.txtGuardarDetalle.Location = new System.Drawing.Point(118, 183);
             this.txtGuardarDetalle.Name = "txtGuardarDetalle";
-            this.txtGuardarDetalle.Size = new System.Drawing.Size(147, 23);
+            this.txtGuardarDetalle.Size = new System.Drawing.Size(65, 23);
             this.txtGuardarDetalle.TabIndex = 48;
             this.txtGuardarDetalle.Text = "Guardar";
             this.txtGuardarDetalle.UseVisualStyleBackColor = true;
@@ -316,7 +342,7 @@
             // txtCodCabeceraFicha
             // 
             this.txtCodCabeceraFicha.Enabled = false;
-            this.txtCodCabeceraFicha.Location = new System.Drawing.Point(115, 66);
+            this.txtCodCabeceraFicha.Location = new System.Drawing.Point(115, 29);
             this.txtCodCabeceraFicha.MaxLength = 50;
             this.txtCodCabeceraFicha.Name = "txtCodCabeceraFicha";
             this.txtCodCabeceraFicha.Size = new System.Drawing.Size(121, 20);
@@ -324,7 +350,7 @@
             // 
             // txtCodDetalleFicha
             // 
-            this.txtCodDetalleFicha.Location = new System.Drawing.Point(115, 29);
+            this.txtCodDetalleFicha.Location = new System.Drawing.Point(115, 66);
             this.txtCodDetalleFicha.MaxLength = 50;
             this.txtCodDetalleFicha.Name = "txtCodDetalleFicha";
             this.txtCodDetalleFicha.Size = new System.Drawing.Size(121, 20);
@@ -342,7 +368,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(7, 69);
+            this.label13.Location = new System.Drawing.Point(6, 32);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(91, 13);
             this.label13.TabIndex = 44;
@@ -351,39 +377,103 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 32);
+            this.label14.Location = new System.Drawing.Point(6, 69);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(89, 13);
             this.label14.TabIndex = 43;
             this.label14.Text = "Código Det Ficha";
             // 
-            // label3
+            // btnActualizar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(489, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 13);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "cm";
+            this.btnActualizar.Location = new System.Drawing.Point(226, 183);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(65, 23);
+            this.btnActualizar.TabIndex = 65;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // btnLimpiar
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(491, 99);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 13);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "kg";
+            this.btnLimpiar.Location = new System.Drawing.Point(334, 183);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(65, 23);
+            this.btnLimpiar.TabIndex = 64;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(10, 183);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(65, 23);
+            this.btnEliminar.TabIndex = 63;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(442, 183);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(65, 23);
+            this.btnListar.TabIndex = 62;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(222, 171);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(65, 23);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(328, 171);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 23);
+            this.button2.TabIndex = 48;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(10, 171);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(65, 23);
+            this.button3.TabIndex = 47;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(434, 171);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(65, 23);
+            this.button4.TabIndex = 46;
+            this.button4.Text = "Listar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(116, 171);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(65, 23);
+            this.btnGuardar.TabIndex = 45;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // frmFichaAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 394);
+            this.ClientSize = new System.Drawing.Size(550, 452);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gboxCabecera);
             this.Name = "frmFichaAlumno";
             this.Text = "Ficha Alumno";
+            this.Load += new System.EventHandler(this.frmFichaAlumno_Load);
             this.gboxCabecera.ResumeLayout(false);
             this.gboxCabecera.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -404,7 +494,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button txtGuardarCabecera;
         private System.Windows.Forms.TextBox txtRutRRHH;
         private System.Windows.Forms.TextBox txtCod_Ficha;
         private System.Windows.Forms.Label label4;
@@ -426,5 +515,14 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

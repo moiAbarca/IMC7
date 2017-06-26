@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -116,7 +118,7 @@ namespace CapaGUI
 
         private void txtGuardarDetalle_Click(object sender, EventArgs e)
         {
-            if (txtCodDetalleFicha.Text.Trim().Length == 0 || txtCodCabeceraFicha.Text.Trim().Length == 0)
+            if (txtCodDetalleFicha.Text.Trim().Length == 0 || txtCodCabeceraFicha.Text.Trim().Length == 0 || txtEstatura.Text.Trim().Length == 0 || txtPeso.Text.Trim().Length == 0) 
             {
                 MessageBox.Show("Algunos campos no pueden estar vacíos", "Diálogo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -128,14 +130,40 @@ namespace CapaGUI
 
             det.Cod_Detalle_Ficha = txtCodDetalleFicha.Text;
             det.Cod_Ficha = txtCodCabeceraFicha.Text;
-            det.Valor_IMC = Convert.ToDouble(txtValorIMC.Text);
+
+            double value = Convert.ToDouble(txtValorIMC.Text);
+
+            //darle formato al double de valor IMC
+            det.Valor_IMC = Convert.ToDouble((String.Format(CultureInfo.InvariantCulture,
+                                            "{0:0.00}", txtValorIMC.Text)));
+
+            
             det.Clasificacion_IMC = txtClasifIMC.Text;
-            det.Fecha_Revision = dtIFechaRevision.Value;
-            det.Fecha_Proxima_Revision = dtFechaProxRevision.Value;
+            det.Fecha_Revision = dtIFechaRevision.Value.Date;
+            det.Fecha_Proxima_Revision = dtFechaProxRevision.Value.Date;
 
             de2.ingresaDetalle_Ficha_Alumno(det);
             
             
+        }
+
+        private void frmFichaAlumno_Load(object sender, EventArgs e)
+        {
+            //carga el cmb con la lista del curso
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection("Server=127.0.0.1;Database=IMC;Trusted_Connection=True;"))
+            {
+                string query = "select IdListaCurso, Año from Lista_Curso";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+
+            cmbIdListaCurso.DisplayMember = "Año";
+            cmbIdListaCurso.ValueMember = "IdListaCurso";
+            cmbIdListaCurso.DataSource = dt;
         }
     }
 }

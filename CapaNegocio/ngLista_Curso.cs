@@ -41,7 +41,7 @@ namespace CapaNegocio
         public void ingresaLista_Curso(Lista_Curso lista_Curso)
         {
             this.configurarConexion();
-            this.Conec1.CadenaSQL = "INSERT INTO Lista_Curso (IdListaCurso, Rut, Nombre, Apellido, Edad, Cod_Curso) " +
+            this.Conec1.CadenaSQL = "INSERT INTO Lista_Curso (IdListaCurso, Rut, Cod_Curso, Año, Semestre) " +
                                      " VALUES ('" +lista_Curso.IdListaCurso + "','" + lista_Curso.Rut + "','" + lista_Curso.Cod_Curso + "','" +lista_Curso.Ano + "','"+ lista_Curso.Semestre + "');";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
@@ -54,7 +54,7 @@ namespace CapaNegocio
             this.Conec1.CadenaSQL = "UPDATE Lista_Curso set Rut = '" +
                                      lista_Curso.Rut + 
                                      "', Cod_Curso = '" + lista_Curso.Cod_Curso +
-                                     "', Ano = '" + lista_Curso.Ano +
+                                     "', Año = '" + lista_Curso.Ano +
                                      "', Semestre = '" + lista_Curso.Semestre +
                                      "' WHERE IdListaCurso = '" + lista_Curso.IdListaCurso + "';";
             this.Conec1.EsSelect = false;
@@ -83,7 +83,7 @@ namespace CapaNegocio
             foreach (DataRow dr in this.Conec1.DbDataSet.Tables[this.Conec1.NombreTabla].Rows)
             {
                 Lista_Curso auxLista_Curso = new Lista_Curso();
-                auxLista_Curso.IdListaCurso = (int)dr["IdListaCurso"];
+                auxLista_Curso.IdListaCurso = (String)dr["IdListaCurso"];
                 auxLista_Curso.Rut = (String)dr["Rut"];
                 
                 auxLista_Curso.Cod_Curso = (String)dr["Cod_Curso"];
@@ -96,7 +96,7 @@ namespace CapaNegocio
             return auxListadoLista_Curso;
         }
 
-        public Lista_Curso buscaLista_Curso(int IdListaCurso)
+        public Lista_Curso buscaLista_Curso(string IdListaCurso)
         {
             Lista_Curso auxLista_Curso = new Lista_Curso();
             this.configurarConexion();
@@ -109,16 +109,15 @@ namespace CapaNegocio
 
             try
             {
-                auxLista_Curso.IdListaCurso = (int)dt.Rows[0]["IdListaCurso"];
+                auxLista_Curso.IdListaCurso = (String)dt.Rows[0]["IdListaCurso"];
                 auxLista_Curso.Rut = (String)dt.Rows[0]["Rut"];
-                
                 auxLista_Curso.Cod_Curso = (String)dt.Rows[0]["Cod_Curso"];
-                auxLista_Curso.Ano = (int)dt.Rows[0]["Ano"];
+                auxLista_Curso.Ano = (int)dt.Rows[0]["Año"];
                 auxLista_Curso.Semestre = (String)dt.Rows[0]["Semestre"];
             }
             catch (Exception ex)
             {
-                auxLista_Curso.IdListaCurso = 0;
+                auxLista_Curso.IdListaCurso = String.Empty;
                 auxLista_Curso.Rut = String.Empty;
                 
                 auxLista_Curso.Cod_Curso = String.Empty;
@@ -142,7 +141,7 @@ namespace CapaNegocio
 
             try
             {
-                auxLista_Curso.IdListaCurso = (int)dt.Rows[0]["IdListaCurso"];
+                auxLista_Curso.IdListaCurso = (String)dt.Rows[0]["IdListaCurso"];
                 auxLista_Curso.Rut = (String)dt.Rows[0]["Rut"];
 
                 auxLista_Curso.Cod_Curso = (String)dt.Rows[0]["Cod_Curso"];
@@ -151,7 +150,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                auxLista_Curso.IdListaCurso = 0;
+                auxLista_Curso.IdListaCurso = String.Empty;
                 auxLista_Curso.Rut = String.Empty;
 
                 auxLista_Curso.Cod_Curso = String.Empty;

@@ -45,12 +45,17 @@
             // 
             // dataGridListadoCliente
             // 
+            this.dataGridListadoCliente.AllowUserToAddRows = false;
+            this.dataGridListadoCliente.AllowUserToDeleteRows = false;
+            this.dataGridListadoCliente.AllowUserToOrderColumns = true;
+            this.dataGridListadoCliente.AllowUserToResizeRows = false;
             this.dataGridListadoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridListadoCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridListadoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridListadoCliente.Location = new System.Drawing.Point(12, 12);
             this.dataGridListadoCliente.Name = "dataGridListadoCliente";
+            this.dataGridListadoCliente.ReadOnly = true;
             this.dataGridListadoCliente.RowHeadersVisible = false;
             this.dataGridListadoCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridListadoCliente.Size = new System.Drawing.Size(381, 165);

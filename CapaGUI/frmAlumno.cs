@@ -131,9 +131,9 @@ namespace CapaGUI
         {
             srGuardaDatosAlumnos.wsGuardaDatosAlumnosSoapClient auxSwGuardarDatosAlumnos = new srGuardaDatosAlumnos.wsGuardaDatosAlumnosSoapClient();
             srGuardaDatosAlumnos.Alumno auxAlumno = new srGuardaDatosAlumnos.Alumno();
-            if (txtRut.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtApellido.Text.Trim().Length == 0 || dtFechaNacimiento.Value == DateTime.Now)
+            if (txtRut.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtApellido.Text.Trim().Length == 0 || dtFechaNacimiento.Value.Date < DateTime.Now)
             {
-                MessageBox.Show("Ningún campo puede estar vacío");
+                MessageBox.Show("Tiene algún campo vacío o la fecha no ha sido modificada");
                 return;
             }
             else
