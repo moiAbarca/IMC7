@@ -52,7 +52,8 @@ namespace CapaGUI
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ngMedida_Correctiva car = new ngMedida_Correctiva();
+            srGuardaDatosCorrectivos.wsGuardaDatosCorrectivosSoapClient auxSwGuardarDatosCorrectivos = new srGuardaDatosCorrectivos.wsGuardaDatosCorrectivosSoapClient();
+            srGuardaDatosCorrectivos.Medida_Correctiva auxMedidaCorrectiva = new srGuardaDatosCorrectivos.Medida_Correctiva();
             if (txtCodMC.Text.Trim().Length == 0 || txtDescripcion.Text.Trim().Length == 0 || cmbCodFichaDetalle.SelectedIndex == -1 || cmbCodTMC.SelectedIndex == -1)
             {
                 MessageBox.Show("Ningún campo puede estar vacío");
@@ -60,27 +61,27 @@ namespace CapaGUI
             }
             else
             {
-                if (String.IsNullOrEmpty(car.buscaMedida_Correctiva(this.txtCodMC.Text).Cod_MC))
+                if (String.IsNullOrEmpty(auxSwGuardarDatosCorrectivos.buscarMedida_Correctiva(this.txtCodMC.Text).Cod_MC))
                 {
-                    ngMedida_Correctiva ncargo = new ngMedida_Correctiva();
-                    ngMedida_Correctiva tod = new ngMedida_Correctiva();
-                    ncargo.Cod_MC = txtCodMC.Text;
-                    ncargo.Descripcion = txtDescripcion.Text;
+                    auxMedidaCorrectiva.Cod_MC = txtCodMC.Text;
+                    auxMedidaCorrectiva.Descripcion = txtDescripcion.Text;
+
+                    auxMedidaCorrectiva.Cod_TMC = Convert.ToString(cmbCodTMC.SelectedValue);
+                    auxMedidaCorrectiva.Cod_Detalle_Ficha = Convert.ToString(cmbCodFichaDetalle.SelectedValue);
+
+                    auxMedidaCorrectiva.Fecha_Termino = dtFechaTermino.Value.Date;
+                    auxMedidaCorrectiva.Fecha_Inicio = dtFechaInicio.Value.Date;
                     
-                    ncargo.Cod_TMC = Convert.ToString(cmbCodTMC.SelectedValue);
-                    ncargo.Cod_Detalle_Ficha = Convert.ToString(cmbCodFichaDetalle.SelectedValue);
-
-                    ncargo.Fecha_Termino = dtFechaTermino.Value.Date;
-                    ncargo.Fecha_Inicio = dtFechaInicio.Value.Date;
-
-                    tod.ingresaMedida_Correctiva(ncargo);
-                    MessageBox.Show("Medida_Correctiva Guardada Correctamente");
+                    auxSwGuardarDatosCorrectivos.agregaDatosCorrectivos(auxMedidaCorrectiva);
+                    MessageBox.Show("MedidaCorrectiva guardada", "Mensaje Sistema");
                     Limpiar();
+                    this.txtCodMC.Focus();
                 }
+
                 else
                 {
-                    MessageBox.Show("Medida_Correctiva ya existe", "Mensaje Sistema");
-                    return;
+                    MessageBox.Show("MedidaCorrectiva ya existe", "Mensaje Sistema");
+                    this.txtCodMC.Focus();
                 }
             }
         }
@@ -155,22 +156,25 @@ namespace CapaGUI
                     return;
                 }
             }
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ngMedida_Correctiva ncargo = new ngMedida_Correctiva();
+            srGuardaDatosCorrectivos.wsGuardaDatosCorrectivosSoapClient auxSwGuardarDatosAlumnos = new srGuardaDatosCorrectivos.wsGuardaDatosCorrectivosSoapClient();
+            srGuardaDatosCorrectivos.Medida_Correctiva auxAlumno = new srGuardaDatosCorrectivos.Medida_Correctiva();
 
-            if (String.IsNullOrEmpty(ncargo.buscaMedida_Correctiva(this.txtCodMC.Text).Cod_MC))
+            if (String.IsNullOrEmpty(auxSwGuardarDatosAlumnos.buscarMedida_Correctiva(this.txtCodMC.Text).Cod_MC))
             {
-                MessageBox.Show("No se puede eliminar Medida_Correctiva", "Mensaje Sistema");
+                MessageBox.Show("Medida Correctiva no existe", "Mensaje Sistema");
             }
 
             else
             {
 
-                ncargo.eliminarMedida_Correctiva(txtCodMC.Text);
-                MessageBox.Show("Medida_Correctiva eliminada", "Mensaje Sistema");
+                auxSwGuardarDatosAlumnos.eliminarMedidaCorrectiva(txtCodMC.Text);
+                MessageBox.Show("MedidaCorrectiva eliminada", "Mensaje Sistema");
                 Limpiar();
                 this.txtCodMC.Focus();
             }

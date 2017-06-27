@@ -191,6 +191,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\srGuardaDatosCorrectivos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAlumno.resx">
       <DependentUpon>frmAlumno.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +283,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\srGuardaDatosAlumnos\wsGuardaDatosAlumnos.wsdl" />
+    <None Include="Service References\srGuardaDatosCorrectivos\CapaGUI.srGuardaDatosCorrectivos.Medida_Correctiva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\srGuardaDatosCorrectivos\wsGuardaDatosCorrectivos.wsdl" />
     <None Include="System.Data.DataSet.datasource" />
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +299,7 @@
     <WCFMetadataStorage Include="Service References\srCalculaIMC\" />
     <WCFMetadataStorage Include="Service References\srComparaIMC\" />
     <WCFMetadataStorage Include="Service References\srGuardaDatosAlumnos\" />
+    <WCFMetadataStorage Include="Service References\srGuardaDatosCorrectivos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\srGuardaDatosAlumnos\wsGuardaDatosAlumnos.disco" />
@@ -342,6 +352,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\srCalculaIMC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srGuardaDatosCorrectivos\wsGuardaDatosCorrectivos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srGuardaDatosCorrectivos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srGuardaDatosCorrectivos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srGuardaDatosCorrectivos\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

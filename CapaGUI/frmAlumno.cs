@@ -100,24 +100,28 @@ namespace CapaGUI
                 this.txtRut.Focus();
                 return;
             }
-
-
-            srGuardaDatosAlumnos.wsGuardaDatosAlumnosSoapClient auxWsGuardaDatosAlumnos = new srGuardaDatosAlumnos.wsGuardaDatosAlumnosSoapClient();
-            srGuardaDatosAlumnos.Alumno auxAlumno = new srGuardaDatosAlumnos.Alumno();
-            auxAlumno = auxWsGuardaDatosAlumnos.buscarAlumno(this.txtRut.Text);
-
-            if (String.IsNullOrEmpty(auxAlumno.Rut))
-            {
-                MessageBox.Show("Cliente No existe", "Mensaje Sistema");
-                this.txtRut.Focus();
-            }
             else
             {
-                this.txtNombre.Text = auxAlumno.Nombre;
-                this.txtApellido.Text = auxAlumno.Apellido;
-                this.dtFechaNacimiento.Value = auxAlumno.FechaNacimiento;
+                srGuardaDatosAlumnos.wsGuardaDatosAlumnosSoapClient auxWsGuardaDatosAlumnos = new srGuardaDatosAlumnos.wsGuardaDatosAlumnosSoapClient();
+                srGuardaDatosAlumnos.Alumno auxAlumno = new srGuardaDatosAlumnos.Alumno();
+                auxAlumno = auxWsGuardaDatosAlumnos.buscarAlumno(this.txtRut.Text);
+
+                if (String.IsNullOrEmpty(auxAlumno.Rut))
+                {
+                    MessageBox.Show("Alumno No existe", "Mensaje Sistema");
+                    this.txtRut.Focus();
+                }
+                else
+                {
+                    this.txtNombre.Text = auxAlumno.Nombre;
+                    this.txtApellido.Text = auxAlumno.Apellido;
+                    this.dtFechaNacimiento.Value = auxAlumno.FechaNacimiento;
+                }
+                //HabilitarFormulario(true);
             }
-            HabilitarFormulario(true);
+
+
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -147,7 +151,9 @@ namespace CapaGUI
                     auxAlumno.FechaNacimiento = this.dtFechaNacimiento.Value.Date;
 
                     auxSwGuardarDatosAlumnos.agregaAlumno(auxAlumno);
-                    MessageBox.Show("Alumno Guardado", "Mensaje Sistema");
+                    MessageBox.Show("Alumno guardado", "Mensaje Sistema");
+                    Limpiar();
+                    this.txtRut.Focus();
                 }
 
                 else
@@ -199,6 +205,8 @@ namespace CapaGUI
 
                 auxSwGuardarDatosAlumnos.actualizaAlumno(auxAlumno);
                 MessageBox.Show("Alumno Actualizado", "Mensaje Sistema");
+                Limpiar();
+                this.txtRut.Focus();
             }
 
             else
