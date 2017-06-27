@@ -185,5 +185,25 @@ namespace CapaGUI
             frmLstMedidaCorrectiva from = new frmLstMedidaCorrectiva();
             from.ShowDialog();
         }
+
+        private void txtCodMC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }
