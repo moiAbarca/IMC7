@@ -43,7 +43,7 @@ namespace CapaNegocio
             this.configurarConexion();
             this.Conec1.CadenaSQL = "INSERT INTO Medida_Correctiva (Cod_MC, Cod_Detalle_Ficha, Cod_TMC, Descripcion, Fecha_Inicio, Fecha_Termino) " +
                                      " VALUES ('" + medida_Correctiva.Cod_MC + "','" + medida_Correctiva.Cod_Detalle_Ficha + "','" +
-                                      medida_Correctiva.Cod_TMC + "','" + medida_Correctiva.Descripcion + "','" + medida_Correctiva.Fecha_Inicio + "','" + medida_Correctiva.Fecha_Termino + "');";
+                                      medida_Correctiva.Cod_TMC + "','" + medida_Correctiva.Descripcion + "','" + medida_Correctiva.Fecha_Inicio.ToString("yyyyMMdd") + "','" + medida_Correctiva.Fecha_Termino.ToString("yyyyMMdd") + "');";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
 
@@ -55,8 +55,8 @@ namespace CapaNegocio
             this.Conec1.CadenaSQL = "UPDATE Medida_Correctiva set Cod_Detalle_Ficha = '" +
                                      medida_Correctiva.Cod_Detalle_Ficha + "', Cod_TMC = '" + medida_Correctiva.Cod_TMC +
                                      "', Descripcion = '" + medida_Correctiva.Descripcion +
-                                     "', Fecha_Inicio = '" + medida_Correctiva.Fecha_Inicio +
-                                     "', Fecha_Termino = '" + medida_Correctiva.Fecha_Termino +
+                                     "', Fecha_Inicio = '" + medida_Correctiva.Fecha_Inicio.ToString("yyyyMMdd") +
+                                     "', Fecha_Termino = '" + medida_Correctiva.Fecha_Termino.ToString("yyyyMMdd") +
                                      "' WHERE Cod_MC = '" + medida_Correctiva.Cod_MC + "';";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
@@ -88,8 +88,8 @@ namespace CapaNegocio
                 auxMedida_Correctiva.Cod_Detalle_Ficha = (String)dr["Cod_Detalle_Ficha"];
                 auxMedida_Correctiva.Cod_TMC = (String)dr["Cod_TMC"];
                 auxMedida_Correctiva.Descripcion = (String)dr["Descripcion"];
-                auxMedida_Correctiva.Fecha_Inicio = (String)dr["Fecha_Inicio"];
-                auxMedida_Correctiva.Fecha_Termino = (String)dr["Fecha_Termino"];
+                auxMedida_Correctiva.Fecha_Inicio = (DateTime)dr["Fecha_Inicio"];
+                auxMedida_Correctiva.Fecha_Termino = (DateTime)dr["Fecha_Termino"];
                 auxListadoMedida_Correctiva.Add(auxMedida_Correctiva);
             } //Fin for
 
@@ -114,8 +114,8 @@ namespace CapaNegocio
                 auxMedida_Correctiva.Cod_Detalle_Ficha = (String)dt.Rows[0]["Cod_Detalle_Ficha"];
                 auxMedida_Correctiva.Cod_TMC = (String)dt.Rows[0]["Cod_TMC"];
                 auxMedida_Correctiva.Descripcion = (String)dt.Rows[0]["Descripcion"];
-                auxMedida_Correctiva.Fecha_Inicio = (String)dt.Rows[0]["Fecha_Inicio"];
-                auxMedida_Correctiva.Fecha_Termino = (String)dt.Rows[0]["Fecha_Termino"];
+                auxMedida_Correctiva.Fecha_Inicio = (DateTime)dt.Rows[0]["Fecha_Inicio"];
+                auxMedida_Correctiva.Fecha_Termino = (DateTime)dt.Rows[0]["Fecha_Termino"];
             }
             catch (Exception ex)
             {
@@ -123,8 +123,8 @@ namespace CapaNegocio
                 auxMedida_Correctiva.Cod_Detalle_Ficha = String.Empty;
                 auxMedida_Correctiva.Cod_TMC = String.Empty;
                 auxMedida_Correctiva.Descripcion = String.Empty;
-                auxMedida_Correctiva.Fecha_Inicio = String.Empty;
-                auxMedida_Correctiva.Fecha_Termino = String.Empty;
+                auxMedida_Correctiva.Fecha_Inicio = Convert.ToDateTime("1990 / 01 / 01");
+                auxMedida_Correctiva.Fecha_Termino = Convert.ToDateTime("1990 / 01 / 01");
             }
 
             return auxMedida_Correctiva;
@@ -147,8 +147,8 @@ namespace CapaNegocio
                 auxMedida_Correctiva.Cod_Detalle_Ficha = (String)dt.Rows[0]["Cod_Detalle_Ficha"];
                 auxMedida_Correctiva.Cod_TMC = (String)dt.Rows[0]["Cod_TMC"];
                 auxMedida_Correctiva.Descripcion = (String)dt.Rows[0]["Descripcion"];
-                auxMedida_Correctiva.Fecha_Inicio = (String)dt.Rows[0]["Fecha_Inicio"];
-                auxMedida_Correctiva.Fecha_Termino = (String)dt.Rows[0]["Fecha_Termino"];
+                auxMedida_Correctiva.Fecha_Inicio = (DateTime)dt.Rows[0]["Fecha_Inicio"];
+                auxMedida_Correctiva.Fecha_Termino = (DateTime)dt.Rows[0]["Fecha_Termino"];
             }
             catch (Exception ex)
             {
@@ -156,8 +156,8 @@ namespace CapaNegocio
                 auxMedida_Correctiva.Cod_Detalle_Ficha = String.Empty;
                 auxMedida_Correctiva.Cod_TMC = String.Empty;
                 auxMedida_Correctiva.Descripcion = String.Empty;
-                auxMedida_Correctiva.Fecha_Inicio = String.Empty;
-                auxMedida_Correctiva.Fecha_Termino = String.Empty;
+                auxMedida_Correctiva.Fecha_Inicio = Convert.ToDateTime("1990 / 01 / 01");
+                auxMedida_Correctiva.Fecha_Termino = Convert.ToDateTime("1990 / 01 / 01");
             }
 
             return auxMedida_Correctiva;

@@ -126,11 +126,23 @@
     <Compile Include="frmLstListaCurso.Designer.cs">
       <DependentUpon>frmLstListaCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLstMedidaCorrectiva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLstMedidaCorrectiva.Designer.cs">
+      <DependentUpon>frmLstMedidaCorrectiva.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLstRRHH.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLstRRHH.Designer.cs">
       <DependentUpon>frmLstRRHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLstTipoMedidaCorrectiva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLstTipoMedidaCorrectiva.Designer.cs">
+      <DependentUpon>frmLstTipoMedidaCorrectiva.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -218,8 +230,14 @@
     <EmbeddedResource Include="frmLstListaCurso.resx">
       <DependentUpon>frmLstListaCurso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLstMedidaCorrectiva.resx">
+      <DependentUpon>frmLstMedidaCorrectiva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLstRRHH.resx">
       <DependentUpon>frmLstRRHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLstTipoMedidaCorrectiva.resx">
+      <DependentUpon>frmLstTipoMedidaCorrectiva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

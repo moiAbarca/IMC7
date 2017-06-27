@@ -16,8 +16,8 @@ namespace CapaDTO
         private string _cod_Detalle_Ficha;
         private string _cod_TMC;
         private string _descripcion;
-        private string _fecha_Inicio;
-        private string _fecha_Termino;
+        private DateTime _fecha_Inicio;
+        private DateTime _fecha_Termino;
 
         public string Cod_MC
         {
@@ -71,7 +71,7 @@ namespace CapaDTO
             }
         }
 
-        public string Fecha_Inicio
+        public DateTime Fecha_Inicio
         {
             get
             {
@@ -84,7 +84,7 @@ namespace CapaDTO
             }
         }
 
-        public string Fecha_Termino
+        public DateTime Fecha_Termino
         {
             get
             {

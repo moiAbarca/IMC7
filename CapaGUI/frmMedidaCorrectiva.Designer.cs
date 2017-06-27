@@ -33,7 +33,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtGuardar = new System.Windows.Forms.Button();
             this.txtCodMC = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,11 +40,16 @@
             this.cmbCodFichaDetalle = new System.Windows.Forms.ComboBox();
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFechaTermino = new System.Windows.Forms.DateTimePicker();
-            this.btnListar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbCodTMC
             // 
+            this.cmbCodTMC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodTMC.FormattingEnabled = true;
             this.cmbCodTMC.Location = new System.Drawing.Point(108, 86);
             this.cmbCodTMC.Name = "cmbCodTMC";
@@ -63,7 +67,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(251, 90);
+            this.label6.Location = new System.Drawing.Point(246, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 50;
@@ -72,7 +76,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(251, 50);
+            this.label7.Location = new System.Drawing.Point(251, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 49;
@@ -87,15 +91,6 @@
             this.label8.TabIndex = 48;
             this.label8.Text = "Descripción";
             // 
-            // txtGuardar
-            // 
-            this.txtGuardar.Location = new System.Drawing.Point(108, 129);
-            this.txtGuardar.Name = "txtGuardar";
-            this.txtGuardar.Size = new System.Drawing.Size(121, 23);
-            this.txtGuardar.TabIndex = 47;
-            this.txtGuardar.Text = "Guardar";
-            this.txtGuardar.UseVisualStyleBackColor = true;
-            // 
             // txtCodMC
             // 
             this.txtCodMC.Location = new System.Drawing.Point(108, 10);
@@ -103,6 +98,7 @@
             this.txtCodMC.Name = "txtCodMC";
             this.txtCodMC.Size = new System.Drawing.Size(121, 20);
             this.txtCodMC.TabIndex = 45;
+            this.txtCodMC.Leave += new System.EventHandler(this.txtCodMC_Leave);
             // 
             // label4
             // 
@@ -133,6 +129,7 @@
             // 
             // cmbCodFichaDetalle
             // 
+            this.cmbCodFichaDetalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodFichaDetalle.FormattingEnabled = true;
             this.cmbCodFichaDetalle.Location = new System.Drawing.Point(108, 47);
             this.cmbCodFichaDetalle.Name = "cmbCodFichaDetalle";
@@ -153,21 +150,66 @@
             this.dtFechaTermino.Size = new System.Drawing.Size(149, 20);
             this.dtFechaTermino.TabIndex = 57;
             // 
-            // btnListar
+            // button1
             // 
-            this.btnListar.Location = new System.Drawing.Point(254, 129);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(121, 23);
-            this.btnListar.TabIndex = 58;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(215, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(65, 23);
+            this.button1.TabIndex = 62;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(315, 124);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 23);
+            this.button2.TabIndex = 61;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(15, 124);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(65, 23);
+            this.button3.TabIndex = 60;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(415, 124);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(65, 23);
+            this.button4.TabIndex = 59;
+            this.button4.Text = "Listar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(115, 124);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(65, 23);
+            this.btnGuardar.TabIndex = 58;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmMedidaCorrectiva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 170);
-            this.Controls.Add(this.btnListar);
+            this.ClientSize = new System.Drawing.Size(495, 170);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtFechaTermino);
             this.Controls.Add(this.dtFechaInicio);
             this.Controls.Add(this.cmbCodFichaDetalle);
@@ -176,13 +218,13 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtGuardar);
             this.Controls.Add(this.txtCodMC);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmMedidaCorrectiva";
             this.Text = "Medida Correctiva";
+            this.Load += new System.EventHandler(this.frmMedidaCorrectiva_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,7 +237,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button txtGuardar;
         private System.Windows.Forms.TextBox txtCodMC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -203,6 +244,10 @@
         private System.Windows.Forms.ComboBox cmbCodFichaDetalle;
         private System.Windows.Forms.DateTimePicker dtFechaInicio;
         private System.Windows.Forms.DateTimePicker dtFechaTermino;
-        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

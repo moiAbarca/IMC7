@@ -1,6 +1,6 @@
 ﻿namespace CapaGUI
 {
-    partial class frmListarCurso
+    partial class frmLstMedidaCorrectiva
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.btoMostrar.Location = new System.Drawing.Point(12, 185);
             this.btoMostrar.Name = "btoMostrar";
             this.btoMostrar.Size = new System.Drawing.Size(167, 38);
-            this.btoMostrar.TabIndex = 8;
+            this.btoMostrar.TabIndex = 10;
             this.btoMostrar.Text = "Mostrar";
             this.btoMostrar.UseVisualStyleBackColor = true;
             this.btoMostrar.Click += new System.EventHandler(this.btoMostrar_Click);
@@ -56,20 +56,21 @@
             this.dgListadoCargos.ReadOnly = true;
             this.dgListadoCargos.RowHeadersVisible = false;
             this.dgListadoCargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgListadoCargos.Size = new System.Drawing.Size(443, 165);
-            this.dgListadoCargos.TabIndex = 7;
+            this.dgListadoCargos.Size = new System.Drawing.Size(441, 165);
+            this.dgListadoCargos.TabIndex = 9;
             // 
-            // frmListarCurso
+            // frmLstMedidaCorrectiva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 241);
+            this.ClientSize = new System.Drawing.Size(461, 236);
             this.Controls.Add(this.btoMostrar);
             this.Controls.Add(this.dgListadoCargos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmListarCurso";
-            this.Text = "Listar Curso";
+            this.Name = "frmLstMedidaCorrectiva";
+            this.Text = "Lista de Medidas  Correctivas";
             ((System.ComponentModel.ISupportInitialize)(this.dgListadoCargos)).EndInit();
             this.ResumeLayout(false);
 

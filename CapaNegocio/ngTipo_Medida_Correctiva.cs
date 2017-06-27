@@ -92,7 +92,7 @@ namespace CapaNegocio
             return auxListadoTipo_Medida_Correctiva;
         }
 
-        public Tipo_Medida_Correctiva buscaTipo_Medida_Correctiva(int Cod_TMC)
+        public Tipo_Medida_Correctiva buscaTipo_Medida_Correctiva(string Cod_TMC)
         {
             Tipo_Medida_Correctiva auxTipo_Medida_Correctiva = new Tipo_Medida_Correctiva();
             this.configurarConexion();
