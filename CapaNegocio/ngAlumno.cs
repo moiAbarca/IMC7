@@ -43,7 +43,8 @@ namespace CapaNegocio
             this.configurarConexion();
             this.Conec1.CadenaSQL = "INSERT INTO Alumno (Rut,Nombre, Apellido, FechaNacimiento) " +
                                      " VALUES ('" + alumno.Rut + "','" +
-                                      alumno.Nombre + "','" +alumno.Apellido + "','" +alumno.FechaNacimiento.ToString("yyyyMMdd") + "');";
+                                      alumno.Nombre + "','" +alumno.Apellido + "','" +
+                                      alumno.FechaNacimiento.ToString("yyyyMMdd") + "');";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
 

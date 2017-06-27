@@ -40,9 +40,14 @@ namespace CapaNegocio
         public void ingresaCabecera_Ficha_Alumnos(Cabecera_Ficha_Alumnos cabecera_Ficha_Alumnos)
         {
             this.configurarConexion();
-            this.Conec1.CadenaSQL = "INSERT INTO Cabecera_Ficha_Alumnos (Cod_Ficha,Rut, Rut_RRHH, Estatura, Peso, Fecha_Actualizacion, IdListaCurso) " +
-                                     " VALUES ('" + cabecera_Ficha_Alumnos.Cod_Ficha + "','" + cabecera_Ficha_Alumnos.Rut + "','" +
-                                      cabecera_Ficha_Alumnos.Rut_RRHH + "','" + cabecera_Ficha_Alumnos.Estatura + "','" + cabecera_Ficha_Alumnos.Peso + "','" + cabecera_Ficha_Alumnos.Fecha_Actualizacion + "','" + cabecera_Ficha_Alumnos.IdListaCurso + "');";
+            this.Conec1.CadenaSQL = "INSERT INTO Cabecera_Ficha_Alumnos (Cod_Ficha, Rut, Rut_RRHH, Estatura, Peso, Fecha_Actualizacion, IdListaCurso) " +
+                                     " VALUES ('" + cabecera_Ficha_Alumnos.Cod_Ficha + "','" + 
+                                     cabecera_Ficha_Alumnos.Rut + "','" +
+                                      cabecera_Ficha_Alumnos.Rut_RRHH + "','" + 
+                                      cabecera_Ficha_Alumnos.Estatura + "','" +
+                                      cabecera_Ficha_Alumnos.Peso + "','" + 
+                                      cabecera_Ficha_Alumnos.Fecha_Actualizacion.ToString("yyyyMMdd") + "','" + 
+                                      cabecera_Ficha_Alumnos.IdListaCurso + "');";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
 
@@ -55,7 +60,7 @@ namespace CapaNegocio
                                      cabecera_Ficha_Alumnos.Rut + "', Rut_RRHH = '" + cabecera_Ficha_Alumnos.Rut_RRHH +
                                      "', Estatura = '" + cabecera_Ficha_Alumnos.Estatura +
                                      "', Peso = '" + cabecera_Ficha_Alumnos.Peso +
-                                     "', Fecha_Actualizacion = '" + cabecera_Ficha_Alumnos.Fecha_Actualizacion +
+                                     "', Fecha_Actualizacion = '" + cabecera_Ficha_Alumnos.Fecha_Actualizacion.ToString("yyyyMMdd") +
                                       "', IdListaCurso = '" + cabecera_Ficha_Alumnos.IdListaCurso +
                                      "' WHERE Cod_Ficha = '" + cabecera_Ficha_Alumnos.Cod_Ficha + "';";
             this.Conec1.EsSelect = false;
@@ -87,8 +92,8 @@ namespace CapaNegocio
                 auxCabecera_Ficha_Alumnos.Cod_Ficha = (String)dr["Cod_Ficha"];
                 auxCabecera_Ficha_Alumnos.Rut = (String)dr["Rut"];
                 auxCabecera_Ficha_Alumnos.Rut_RRHH = (String)dr["Rut_RRHH"];
-                auxCabecera_Ficha_Alumnos.Estatura = (float)dr["Estatura"];
-                auxCabecera_Ficha_Alumnos.Peso = (float)dr["Peso"];
+                auxCabecera_Ficha_Alumnos.Estatura = (double)dr["Estatura"];
+                auxCabecera_Ficha_Alumnos.Peso = (double)dr["Peso"];
                 auxCabecera_Ficha_Alumnos.Fecha_Actualizacion = (DateTime)dr["Fecha_Actualizacion"];
                 auxCabecera_Ficha_Alumnos.IdListaCurso = (String)dr["IdListaCurso"];
                 auxListadoCabecera_Ficha_Alumnos.Add(auxCabecera_Ficha_Alumnos);
@@ -98,7 +103,7 @@ namespace CapaNegocio
             return auxListadoCabecera_Ficha_Alumnos;
         }
 
-        public Cabecera_Ficha_Alumnos buscaCabecera_Ficha_Alumnos(int Cod_Ficha)
+        public Cabecera_Ficha_Alumnos buscaCabecera_Ficha_Alumnos(string Cod_Ficha)
         {
             Cabecera_Ficha_Alumnos auxCabecera_Ficha_Alumnos = new Cabecera_Ficha_Alumnos();
             this.configurarConexion();
@@ -114,8 +119,8 @@ namespace CapaNegocio
                 auxCabecera_Ficha_Alumnos.Cod_Ficha = (String)dt.Rows[0]["Cod_Ficha"];
                 auxCabecera_Ficha_Alumnos.Rut = (String)dt.Rows[0]["Rut"];
                 auxCabecera_Ficha_Alumnos.Rut_RRHH = (String)dt.Rows[0]["Rut_RRHH"];
-                auxCabecera_Ficha_Alumnos.Estatura = (float)dt.Rows[0]["Estatura"];
-                auxCabecera_Ficha_Alumnos.Peso = (float)dt.Rows[0]["Peso"];
+                auxCabecera_Ficha_Alumnos.Estatura = (double)dt.Rows[0]["Estatura"];
+                auxCabecera_Ficha_Alumnos.Peso = (double)dt.Rows[0]["Peso"];
                 auxCabecera_Ficha_Alumnos.Fecha_Actualizacion = (DateTime)dt.Rows[0]["Fecha_Actualizacion"];
                 auxCabecera_Ficha_Alumnos.IdListaCurso = (String)dt.Rows[0]["IdListaCurso"];
             }
@@ -126,7 +131,7 @@ namespace CapaNegocio
                 auxCabecera_Ficha_Alumnos.Rut_RRHH = String.Empty;
                 auxCabecera_Ficha_Alumnos.Estatura = 0;
                 auxCabecera_Ficha_Alumnos.Peso = 0;
-                auxCabecera_Ficha_Alumnos.Fecha_Actualizacion = Convert.ToDateTime("19000101");
+                auxCabecera_Ficha_Alumnos.Fecha_Actualizacion = Convert.ToDateTime("1990 / 01 / 01");
                 auxCabecera_Ficha_Alumnos.IdListaCurso = String.Empty;
             }
 
@@ -149,8 +154,8 @@ namespace CapaNegocio
                 auxCabecera_Ficha_Alumnos.Cod_Ficha = (String)dt.Rows[0]["Cod_Ficha"];
                 auxCabecera_Ficha_Alumnos.Rut = (String)dt.Rows[0]["Rut"];
                 auxCabecera_Ficha_Alumnos.Rut_RRHH = (String)dt.Rows[0]["Rut_RRHH"];
-                auxCabecera_Ficha_Alumnos.Estatura = (float)dt.Rows[0]["Estatura"];
-                auxCabecera_Ficha_Alumnos.Peso = (float)dt.Rows[0]["Peso"];
+                auxCabecera_Ficha_Alumnos.Estatura = (double)dt.Rows[0]["Estatura"];
+                auxCabecera_Ficha_Alumnos.Peso = (double)dt.Rows[0]["Peso"];
                 auxCabecera_Ficha_Alumnos.Fecha_Actualizacion = (DateTime)dt.Rows[0]["Fecha_Actualizacion"];
                 auxCabecera_Ficha_Alumnos.IdListaCurso = (String)dt.Rows[0]["IdListaCurso"];
             }
@@ -161,7 +166,7 @@ namespace CapaNegocio
                 auxCabecera_Ficha_Alumnos.Rut_RRHH = String.Empty;
                 auxCabecera_Ficha_Alumnos.Estatura = 0;
                 auxCabecera_Ficha_Alumnos.Peso = 0;
-                auxCabecera_Ficha_Alumnos.Fecha_Actualizacion = Convert.ToDateTime("19000101");
+                auxCabecera_Ficha_Alumnos.Fecha_Actualizacion = Convert.ToDateTime("1990 / 01 / 01");
                 auxCabecera_Ficha_Alumnos.IdListaCurso = String.Empty;
             }
 

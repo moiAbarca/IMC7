@@ -14,8 +14,8 @@ namespace CapaDTO
         private string _cod_Ficha;
         private string _rut;
         private string _rut_RRHH;
-        private float _estatura;
-        private float _peso;
+        private double _estatura;
+        private double _peso;
         private DateTime _fecha_Actualizacion;
         private string _idListaCurso;
 
@@ -58,7 +58,7 @@ namespace CapaDTO
             }
         }
 
-        public float Estatura
+        public double Estatura
         {
             get
             {
@@ -71,7 +71,7 @@ namespace CapaDTO
             }
         }
 
-        public float Peso
+        public double Peso
         {
             get
             {

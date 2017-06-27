@@ -29,23 +29,32 @@
         private void InitializeComponent()
         {
             this.gboxCabecera = new System.Windows.Forms.GroupBox();
+            this.cmbRutRRHH = new System.Windows.Forms.ComboBox();
+            this.cmbRutAlumno = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtFechaActualizacion = new System.Windows.Forms.DateTimePicker();
             this.cmbIdListaCurso = new System.Windows.Forms.ComboBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtEstatura = new System.Windows.Forms.TextBox();
-            this.txtRutAlumno = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtRutRRHH = new System.Windows.Forms.TextBox();
             this.txtCod_Ficha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
             this.dtFechaProxRevision = new System.Windows.Forms.DateTimePicker();
             this.dtIFechaRevision = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
@@ -59,21 +68,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnListar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.gboxCabecera.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxCabecera
             // 
+            this.gboxCabecera.Controls.Add(this.cmbRutRRHH);
+            this.gboxCabecera.Controls.Add(this.cmbRutAlumno);
             this.gboxCabecera.Controls.Add(this.button1);
             this.gboxCabecera.Controls.Add(this.button2);
             this.gboxCabecera.Controls.Add(this.button3);
@@ -85,12 +87,10 @@
             this.gboxCabecera.Controls.Add(this.cmbIdListaCurso);
             this.gboxCabecera.Controls.Add(this.txtPeso);
             this.gboxCabecera.Controls.Add(this.txtEstatura);
-            this.gboxCabecera.Controls.Add(this.txtRutAlumno);
             this.gboxCabecera.Controls.Add(this.label6);
             this.gboxCabecera.Controls.Add(this.label7);
             this.gboxCabecera.Controls.Add(this.label8);
             this.gboxCabecera.Controls.Add(this.label5);
-            this.gboxCabecera.Controls.Add(this.txtRutRRHH);
             this.gboxCabecera.Controls.Add(this.txtCod_Ficha);
             this.gboxCabecera.Controls.Add(this.label4);
             this.gboxCabecera.Controls.Add(this.label2);
@@ -102,6 +102,74 @@
             this.gboxCabecera.TabStop = false;
             this.gboxCabecera.Text = "Cabecera";
             this.gboxCabecera.Enter += new System.EventHandler(this.gboxCabecera_Enter);
+            // 
+            // cmbRutRRHH
+            // 
+            this.cmbRutRRHH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRutRRHH.FormattingEnabled = true;
+            this.cmbRutRRHH.Location = new System.Drawing.Point(103, 60);
+            this.cmbRutRRHH.Name = "cmbRutRRHH";
+            this.cmbRutRRHH.Size = new System.Drawing.Size(121, 21);
+            this.cmbRutRRHH.TabIndex = 51;
+            // 
+            // cmbRutAlumno
+            // 
+            this.cmbRutAlumno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRutAlumno.FormattingEnabled = true;
+            this.cmbRutAlumno.Location = new System.Drawing.Point(355, 18);
+            this.cmbRutAlumno.Name = "cmbRutAlumno";
+            this.cmbRutAlumno.Size = new System.Drawing.Size(128, 21);
+            this.cmbRutAlumno.TabIndex = 50;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(222, 171);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(65, 23);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(328, 171);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 23);
+            this.button2.TabIndex = 48;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(10, 171);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(65, 23);
+            this.button3.TabIndex = 47;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(434, 171);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(65, 23);
+            this.button4.TabIndex = 46;
+            this.button4.Text = "Listar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(116, 171);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(65, 23);
+            this.btnGuardar.TabIndex = 45;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label11
             // 
@@ -155,14 +223,6 @@
             this.txtEstatura.TabIndex = 39;
             this.txtEstatura.TextChanged += new System.EventHandler(this.txtEstatura_TextChanged);
             // 
-            // txtRutAlumno
-            // 
-            this.txtRutAlumno.Location = new System.Drawing.Point(355, 19);
-            this.txtRutAlumno.MaxLength = 50;
-            this.txtRutAlumno.Name = "txtRutAlumno";
-            this.txtRutAlumno.Size = new System.Drawing.Size(147, 20);
-            this.txtRutAlumno.TabIndex = 38;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -199,14 +259,6 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Fecha Actualización";
             // 
-            // txtRutRRHH
-            // 
-            this.txtRutRRHH.Location = new System.Drawing.Point(103, 60);
-            this.txtRutRRHH.MaxLength = 50;
-            this.txtRutRRHH.Name = "txtRutRRHH";
-            this.txtRutRRHH.Size = new System.Drawing.Size(121, 20);
-            this.txtRutRRHH.TabIndex = 28;
-            // 
             // txtCod_Ficha
             // 
             this.txtCod_Ficha.Location = new System.Drawing.Point(103, 22);
@@ -215,6 +267,7 @@
             this.txtCod_Ficha.Size = new System.Drawing.Size(121, 20);
             this.txtCod_Ficha.TabIndex = 27;
             this.txtCod_Ficha.TextChanged += new System.EventHandler(this.txtCod_Ficha_TextChanged);
+            this.txtCod_Ficha.Leave += new System.EventHandler(this.txtCod_Ficha_Leave);
             // 
             // label4
             // 
@@ -268,6 +321,46 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(226, 183);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(65, 23);
+            this.btnActualizar.TabIndex = 65;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(334, 183);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(65, 23);
+            this.btnLimpiar.TabIndex = 64;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(10, 183);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(65, 23);
+            this.btnEliminar.TabIndex = 63;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(442, 183);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(65, 23);
+            this.btnListar.TabIndex = 62;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // dtFechaProxRevision
             // 
@@ -355,6 +448,7 @@
             this.txtCodDetalleFicha.Name = "txtCodDetalleFicha";
             this.txtCodDetalleFicha.Size = new System.Drawing.Size(121, 20);
             this.txtCodDetalleFicha.TabIndex = 46;
+            this.txtCodDetalleFicha.Leave += new System.EventHandler(this.txtCodDetalleFicha_Leave);
             // 
             // label12
             // 
@@ -383,87 +477,6 @@
             this.label14.TabIndex = 43;
             this.label14.Text = "Código Det Ficha";
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(226, 183);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(65, 23);
-            this.btnActualizar.TabIndex = 65;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(334, 183);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(65, 23);
-            this.btnLimpiar.TabIndex = 64;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(10, 183);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(65, 23);
-            this.btnEliminar.TabIndex = 63;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnListar
-            // 
-            this.btnListar.Location = new System.Drawing.Point(442, 183);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(65, 23);
-            this.btnListar.TabIndex = 62;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(222, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 23);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(328, 171);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 23);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(10, 171);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(65, 23);
-            this.button3.TabIndex = 47;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(434, 171);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(65, 23);
-            this.button4.TabIndex = 46;
-            this.button4.Text = "Listar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(116, 171);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(65, 23);
-            this.btnGuardar.TabIndex = 45;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
             // frmFichaAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,12 +502,10 @@
         private System.Windows.Forms.ComboBox cmbIdListaCurso;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtEstatura;
-        private System.Windows.Forms.TextBox txtRutAlumno;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtRutRRHH;
         private System.Windows.Forms.TextBox txtCod_Ficha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -508,7 +519,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button txtGuardarDetalle;
-        private System.Windows.Forms.TextBox txtCodCabeceraFicha;
         private System.Windows.Forms.TextBox txtCodDetalleFicha;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -524,5 +534,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cmbRutRRHH;
+        private System.Windows.Forms.ComboBox cmbRutAlumno;
+        private System.Windows.Forms.TextBox txtCodCabeceraFicha;
     }
 }

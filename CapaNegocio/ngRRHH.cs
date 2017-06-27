@@ -42,7 +42,7 @@ namespace CapaNegocio
             this.configurarConexion();
             this.Conec1.CadenaSQL = "INSERT INTO RRHH (Rut_RRHH, Cod_Tipo_RRHH, Nombre, Apellido, FechaNacimiento) " +
                                      " VALUES ('" + nRRHH.Rut_RRHH + "','" + nRRHH.Cod_Tipo_RRHH + "','" +
-                                      nRRHH.Nombre + "','" + nRRHH.Apellido + "','" + nRRHH.FechaNacimiento + "');";
+                                      nRRHH.Nombre + "','" + nRRHH.Apellido + "','" + nRRHH.FechaNacimiento.ToString("yyyyMMdd") + "');";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
 
@@ -54,7 +54,7 @@ namespace CapaNegocio
             this.Conec1.CadenaSQL = "UPDATE RRHH set Cod_Tipo_RRHH = '" +
                                      nRRHH.Cod_Tipo_RRHH + "', Nombre = '" + nRRHH.Nombre +
                                      "', Apellido = '" + nRRHH.Apellido +
-                                     "', FechaNacimiento = '" + nRRHH.FechaNacimiento +
+                                     "', FechaNacimiento = '" + nRRHH.FechaNacimiento.ToString("yyyyMMdd") +
                                      "' WHERE Rut_RRHH = '" + nRRHH.Rut_RRHH + "';";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
@@ -121,7 +121,7 @@ namespace CapaNegocio
                 auxRRHH.Cod_Tipo_RRHH = String.Empty;
                 auxRRHH.Nombre = String.Empty;
                 auxRRHH.Apellido = String.Empty;
-                auxRRHH.FechaNacimiento = Convert.ToDateTime("19000101");
+                auxRRHH.FechaNacimiento = Convert.ToDateTime("1990 / 01 / 01");
 
             }
 

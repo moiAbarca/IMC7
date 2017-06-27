@@ -55,8 +55,8 @@ namespace CapaNegocio
             this.Conec1.CadenaSQL = "UPDATE Detalle_Ficha_Alumno set Cod_Ficha = '" +
                                      detalle_Ficha_Alumno.Cod_Ficha + "', Valor_IMC = '" + detalle_Ficha_Alumno.Valor_IMC +
                                      "', Clasificacion_IMC = '" + detalle_Ficha_Alumno.Clasificacion_IMC +
-                                     "', Fecha_Revision = '" + detalle_Ficha_Alumno.Fecha_Revision +
-                                     "', Fecha_Proxima_Revision = '" + detalle_Ficha_Alumno.Fecha_Proxima_Revision +
+                                     "', Fecha_Revision = '" + detalle_Ficha_Alumno.Fecha_Revision.ToString("yyyyMMdd") +
+                                     "', Fecha_Proxima_Revision = '" + detalle_Ficha_Alumno.Fecha_Proxima_Revision.ToString("yyyyMMdd") +
                                      "' WHERE Cod_Detalle_Ficha = '" + detalle_Ficha_Alumno.Cod_Detalle_Ficha + "';";
             this.Conec1.EsSelect = false;
             this.Conec1.conectar();
@@ -123,8 +123,8 @@ namespace CapaNegocio
                 auxDetalle_Ficha_Alumno.Cod_Ficha = String.Empty;
                 auxDetalle_Ficha_Alumno.Valor_IMC = 0;
                 auxDetalle_Ficha_Alumno.Clasificacion_IMC = String.Empty;
-                auxDetalle_Ficha_Alumno.Fecha_Revision = Convert.ToDateTime("19900101");
-                auxDetalle_Ficha_Alumno.Fecha_Proxima_Revision = Convert.ToDateTime("19900101");
+                auxDetalle_Ficha_Alumno.Fecha_Revision = Convert.ToDateTime("1990 / 01 / 01");
+                auxDetalle_Ficha_Alumno.Fecha_Proxima_Revision = Convert.ToDateTime("1990 / 01 / 01");
             }
 
             return auxDetalle_Ficha_Alumno;
@@ -156,8 +156,8 @@ namespace CapaNegocio
                 auxDetalle_Ficha_Alumno.Cod_Ficha = String.Empty;
                 auxDetalle_Ficha_Alumno.Valor_IMC = 0;
                 auxDetalle_Ficha_Alumno.Clasificacion_IMC = String.Empty;
-                auxDetalle_Ficha_Alumno.Fecha_Revision = Convert.ToDateTime("19900101");
-                auxDetalle_Ficha_Alumno.Fecha_Proxima_Revision = Convert.ToDateTime("19900101");
+                auxDetalle_Ficha_Alumno.Fecha_Revision = Convert.ToDateTime("1990 / 01 / 01");
+                auxDetalle_Ficha_Alumno.Fecha_Proxima_Revision = Convert.ToDateTime("1990 / 01 / 01");
             }
 
             return auxDetalle_Ficha_Alumno;
