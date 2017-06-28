@@ -65,12 +65,14 @@ namespace CapaGUI
             txtRut.Enabled = true;
         }
 
-        private void Limpiar()
+        private bool Limpiar()
         {
+            bool cad = true;
             txtRut.Text = string.Empty;
             txtNombre.Text = string.Empty;
             txtApellido.Text = string.Empty;
             dtFechaNacimiento.Text = string.Empty;
+            return cad;
         }
 
         private void txtRut_Leave(object sender, EventArgs e)
@@ -78,18 +80,51 @@ namespace CapaGUI
             ngAlumno ncar = new ngAlumno();
             Alumno ncar2 = new Alumno();
             ncar2 = ncar.buscaAlumno(txtRut.Text);
-            if (String.IsNullOrEmpty(ncar2.Rut))
+
+            bool rut1 = validarRut(txtRut.Text);
+            bool rut2 = validaRut2(txtRut.Text);
+            bool rut3 = validaRut3(txtRut.Text);
+
+            try
             {
-                return;
+                if (rut1 == true && rut2 == true && rut3 == true)
+                {
+                    btnLimpiar.Enabled = true;
+                    if (String.IsNullOrEmpty(ncar2.Rut))
+                    {
+                        return;
+                    }
+                    else
+                    {
+
+                        txtRut.Text = ncar2.Rut;
+                        txtNombre.Text = ncar2.Nombre;
+                        txtApellido.Text = ncar2.Apellido;
+                        dtFechaNacimiento.Value = ncar2.FechaNacimiento;
+
+                    }
+                }
+                else
+                {
+                    btnLimpiar.Enabled = false;
+                    //bool cal = Limpiar();
+                    if (txtRut.Text.Length == 0 /*|| cal == true*/)
+                    {
+                        //txtNombre.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar un rut correcto");
+                        txtRut.Focus();
+                    }
+                    
+                }
             }
-            else
+            catch (Exception)
             {
-                txtRut.Text = ncar2.Rut;
-                txtNombre.Text = ncar2.Nombre;
-                txtApellido.Text = ncar2.Apellido;
-                dtFechaNacimiento.Value = ncar2.FechaNacimiento;
+
                 
-            }
+            }            
         }
 
         private void TraerDatos()
@@ -135,7 +170,7 @@ namespace CapaGUI
         {
             srGuardaDatosAlumnos.wsGuardaDatosAlumnosSoapClient auxSwGuardarDatosAlumnos = new srGuardaDatosAlumnos.wsGuardaDatosAlumnosSoapClient();
             srGuardaDatosAlumnos.Alumno auxAlumno = new srGuardaDatosAlumnos.Alumno();
-            if (txtRut.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtApellido.Text.Trim().Length == 0 || dtFechaNacimiento.Value.Date < DateTime.Now)
+            if (txtRut.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtApellido.Text.Trim().Length == 0 /*|| dtFechaNacimiento.Value.Date < DateTime.Now*/)
             {
                 MessageBox.Show("Tiene algún campo vacío o la fecha no ha sido modificada");
                 return;
@@ -213,6 +248,109 @@ namespace CapaGUI
             {
                 MessageBox.Show("No se pudo actualizar al Alumno", "Mensaje Sistema");
                 this.txtRut.Focus();
+            }
+        }
+
+        private void txtRut_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        public bool validarRut(string rut)
+        {
+
+            bool validacion = false;
+            try
+            {
+                rut = rut.ToUpper();
+                rut = rut.Replace(".", "");
+                rut = rut.Replace("-", "");
+                int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+
+                char dv = char.Parse(rut.Substring(rut.Length - 1, 1));
+
+                int m = 0, s = 1;
+                for (; rutAux != 0; rutAux /= 10)
+                {
+                    s = (s + rutAux % 10 * (9 - m++ % 6)) % 11;
+                }
+                if (dv == (char)(s != 0 ? s + 47 : 75))
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+
+            return validacion;
+        }
+
+        public bool validaRut2(string Rut)
+        {
+            bool validacion = false;
+            try
+            {
+                if (Rut.Length >= 9 )
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            return validacion;
+        }
+
+        public bool validaRut3(string Rut)
+        {
+            bool validacion = false;
+            try
+            {
+                string sTexto1 = txtRut.Text.Substring(0, 1);
+                string sTexto2 = txtRut.Text.Substring(1, 1);
+                
+                if (sTexto1 != sTexto2)
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            
+            
+            return validacion;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //permite solamente letras
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //permite solamente letras
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
             }
         }
     }

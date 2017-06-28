@@ -132,5 +132,35 @@ namespace CapaGUI
             frmLstTipoMedidaCorrectiva from = new frmLstTipoMedidaCorrectiva();
             from.ShowDialog();
         }
+
+        private void txtCod_TMC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtTipoMedida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

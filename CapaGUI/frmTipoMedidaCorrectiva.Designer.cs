@@ -48,22 +48,25 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(304, 20);
             this.txtDescripcion.TabIndex = 46;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // txtTipoMedida
             // 
             this.txtTipoMedida.Location = new System.Drawing.Point(86, 46);
-            this.txtTipoMedida.MaxLength = 50;
+            this.txtTipoMedida.MaxLength = 20;
             this.txtTipoMedida.Name = "txtTipoMedida";
             this.txtTipoMedida.Size = new System.Drawing.Size(304, 20);
             this.txtTipoMedida.TabIndex = 45;
+            this.txtTipoMedida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipoMedida_KeyPress);
             // 
             // txtCod_TMC
             // 
             this.txtCod_TMC.Location = new System.Drawing.Point(86, 8);
-            this.txtCod_TMC.MaxLength = 50;
+            this.txtCod_TMC.MaxLength = 15;
             this.txtCod_TMC.Name = "txtCod_TMC";
             this.txtCod_TMC.Size = new System.Drawing.Size(304, 20);
             this.txtCod_TMC.TabIndex = 44;
+            this.txtCod_TMC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_TMC_KeyPress);
             this.txtCod_TMC.Leave += new System.EventHandler(this.txtCod_TMC_Leave);
             // 
             // label6

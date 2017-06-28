@@ -48,6 +48,7 @@
     <Compile Include="ngDetalle_Ficha_Alumno.cs" />
     <Compile Include="ngLista_Curso.cs" />
     <Compile Include="ngMedida_Correctiva.cs" />
+    <Compile Include="ngReportes.cs" />
     <Compile Include="ngRRHH.cs" />
     <Compile Include="ngTipo_Medida_Correctiva.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -48,10 +48,11 @@
             // txtIdListaCurso
             // 
             this.txtIdListaCurso.Location = new System.Drawing.Point(111, 12);
-            this.txtIdListaCurso.MaxLength = 50;
+            this.txtIdListaCurso.MaxLength = 15;
             this.txtIdListaCurso.Name = "txtIdListaCurso";
             this.txtIdListaCurso.Size = new System.Drawing.Size(242, 20);
             this.txtIdListaCurso.TabIndex = 37;
+            this.txtIdListaCurso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdListaCurso_KeyPress);
             this.txtIdListaCurso.Leave += new System.EventHandler(this.txtIdListaCurso_Leave);
             // 
             // label2
@@ -102,18 +103,20 @@
             // txtAno
             // 
             this.txtAno.Location = new System.Drawing.Point(110, 136);
-            this.txtAno.MaxLength = 50;
+            this.txtAno.MaxLength = 15;
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(242, 20);
             this.txtAno.TabIndex = 50;
+            this.txtAno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAno_KeyPress);
             // 
             // txtSemestre
             // 
             this.txtSemestre.Location = new System.Drawing.Point(110, 177);
-            this.txtSemestre.MaxLength = 50;
+            this.txtSemestre.MaxLength = 15;
             this.txtSemestre.Name = "txtSemestre";
             this.txtSemestre.Size = new System.Drawing.Size(242, 20);
             this.txtSemestre.TabIndex = 52;
+            this.txtSemestre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSemestre_KeyPress);
             // 
             // label4
             // 

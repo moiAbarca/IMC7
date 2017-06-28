@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using CapaNegocio;
+using CapaDTO;
+using System.Data;
+
 
 /// <summary>
 /// Descripción breve de wsGeneraResultados
@@ -22,9 +26,10 @@ public class wsGeneraResultados : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public string HelloWorld()
+    public DataSet generaResultados(string rut)
     {
-        return "Hola a todos";
+        ngReportes report = new ngReportes();
+        return report.GeneraResultados(rut);
     }
 
 }

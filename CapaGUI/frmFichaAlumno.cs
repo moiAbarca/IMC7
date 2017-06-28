@@ -176,24 +176,21 @@ namespace CapaGUI
             //carga los cmb
             DataTable dt1 = new DataTable();
             DataTable dt2 = new DataTable();
-            DataTable dt3 = new DataTable();
+            
             using (SqlConnection conn = new SqlConnection("Server=127.0.0.1;Database=IMC;Trusted_Connection=True;"))
             {
                 string query1 = "select IdListaCurso, Año from Lista_Curso";
                 string query2 = "select Rut_RRHH, Nombre+' '+Apellido  as nombres from RRHH";
-                string query3 = "select Rut, Nombre+' '+Apellido as nombres from Alumno";
-
+                
                 SqlCommand cmd1 = new SqlCommand(query1, conn);
                 SqlCommand cmd2 = new SqlCommand(query2, conn);
-                SqlCommand cmd3 = new SqlCommand(query3, conn);
-
+                
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
                 SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
-                SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
-
+                
                 da1.Fill(dt1);
                 da2.Fill(dt2);
-                da3.Fill(dt3);
+                
             }
 
             cmbIdListaCurso.DisplayMember = "Año";
@@ -204,9 +201,7 @@ namespace CapaGUI
             cmbRutRRHH.ValueMember = "Rut_RRHH";
             cmbRutRRHH.DataSource = dt2;
 
-            cmbRutAlumno.DisplayMember = "nombres";
-            cmbRutAlumno.ValueMember = "Rut";
-            cmbRutAlumno.DataSource = dt3;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -218,7 +213,7 @@ namespace CapaGUI
         {
             txtCod_Ficha.Clear();
             cmbIdListaCurso.SelectedIndex = -1;
-            cmbRutAlumno.SelectedIndex = -1;
+            txtRutAlumno.Clear();
             cmbRutRRHH.SelectedIndex = -1;
             txtEstatura.Clear();
             txtPeso.Clear();
@@ -229,7 +224,7 @@ namespace CapaGUI
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             ngCabecera_Ficha_Alumnos car = new ngCabecera_Ficha_Alumnos();
-            if (txtCod_Ficha.Text.Trim().Length == 0 || txtEstatura.Text.Trim().Length == 0 || txtPeso.Text.Trim().Length == 0 || cmbIdListaCurso.SelectedIndex == -1 || cmbRutAlumno.SelectedIndex == -1 || cmbRutRRHH.SelectedIndex == -1)
+            if (txtCod_Ficha.Text.Trim().Length == 0 || txtEstatura.Text.Trim().Length == 0 || txtPeso.Text.Trim().Length == 0 || cmbIdListaCurso.SelectedIndex == -1 || txtRutAlumno.Text.Trim().Length == 0 || cmbRutRRHH.SelectedIndex == -1)
             {
                 MessageBox.Show("Ningún campo puede estar vacío");
                 return;
@@ -245,7 +240,7 @@ namespace CapaGUI
                     ncargo.Peso = Convert.ToDouble(txtPeso.Text);
                     
                     ncargo.IdListaCurso = Convert.ToString(cmbIdListaCurso.SelectedValue);
-                    ncargo.Rut = Convert.ToString(cmbRutAlumno.SelectedValue);
+                    ncargo.Rut = txtRutAlumno.Text;
                     ncargo.Rut_RRHH = Convert.ToString(cmbRutRRHH.SelectedValue);
                     ncargo.Fecha_Actualizacion = dtFechaActualizacion.Value.Date;
 
@@ -279,7 +274,7 @@ namespace CapaGUI
                 txtEstatura.Text = Convert.ToString(ncar2.Estatura);
                 
                 cmbIdListaCurso.SelectedValue = ncar2.IdListaCurso;
-                cmbRutAlumno.SelectedValue = ncar2.Rut;
+                txtRutAlumno.Text = ncar2.Rut;
                 cmbRutRRHH.SelectedValue = ncar2.Rut_RRHH;
 
                 dtFechaActualizacion.Value = ncar2.Fecha_Actualizacion;
@@ -308,7 +303,7 @@ namespace CapaGUI
         private void button1_Click(object sender, EventArgs e)
         {
             ngCabecera_Ficha_Alumnos car = new ngCabecera_Ficha_Alumnos();
-            if (txtCod_Ficha.Text.Trim().Length == 0 || txtPeso.Text.Trim().Length == 0 || txtEstatura.Text.Trim().Length == 0 || cmbIdListaCurso.SelectedIndex == -1 || cmbRutAlumno.SelectedIndex == -1 || cmbRutRRHH.SelectedIndex == -1)
+            if (txtCod_Ficha.Text.Trim().Length == 0 || txtPeso.Text.Trim().Length == 0 || txtEstatura.Text.Trim().Length == 0 || cmbIdListaCurso.SelectedIndex == -1 || txtRutAlumno.Text.Trim().Length == 0 || cmbRutRRHH.SelectedIndex == -1)
             {
                 MessageBox.Show("Ningún campo puede estar vacío");
                 return;
@@ -325,7 +320,7 @@ namespace CapaGUI
                     ncargo.Peso = Convert.ToDouble(txtPeso.Text);
 
                     ncargo.IdListaCurso = Convert.ToString(cmbIdListaCurso.SelectedValue);
-                    ncargo.Rut = Convert.ToString(cmbRutAlumno.SelectedValue);
+                    ncargo.Rut = txtRutAlumno.Text;
                     ncargo.Rut_RRHH = Convert.ToString(cmbRutRRHH.SelectedValue);
                     ncargo.Fecha_Actualizacion = dtFechaActualizacion.Value.Date;
 
@@ -449,6 +444,179 @@ namespace CapaGUI
         {
             frmLstDetalleFichaAlumno form = new frmLstDetalleFichaAlumno();
             form.ShowDialog();
+        }
+
+        private void txtEstatura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solo números
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && e.KeyChar != (char)Keys.Return)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solo números
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && e.KeyChar != (char)Keys.Return)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCod_Ficha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCodDetalleFicha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtRutAlumno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtRutAlumno_Leave(object sender, EventArgs e)
+        {
+            ngAlumno ncar = new ngAlumno();
+            Alumno ncar2 = new Alumno();
+            ncar2 = ncar.buscaAlumno(txtRutAlumno.Text);
+
+            bool rut1 = validarRut(txtRutAlumno.Text);
+            bool rut2 = validaRut2(txtRutAlumno.Text);
+            bool rut3 = validaRut3(txtRutAlumno.Text);
+
+            try
+            {
+                if (rut1 == true && rut2 == true && rut3 == true)
+                {
+                    button2.Enabled = true;
+                    if (String.IsNullOrEmpty(ncar2.Rut))
+                    {
+                        return;
+                    }
+                    else
+                    {
+
+                        txtRutAlumno.Text = ncar2.Rut;
+    
+
+                    }
+                }
+                else
+                {
+                    button2.Enabled = false;
+                    //bool cal = Limpiar();
+                    if (txtRutAlumno.Text.Length == 0 /*|| cal == true*/)
+                    {
+                        //txtRutAlumno.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar un rut correcto");
+                        txtRutAlumno.Focus();
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        public bool validarRut(string rut)
+        {
+
+            bool validacion = false;
+            try
+            {
+                rut = rut.ToUpper();
+                rut = rut.Replace(".", "");
+                rut = rut.Replace("-", "");
+                int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+
+                char dv = char.Parse(rut.Substring(rut.Length - 1, 1));
+
+                int m = 0, s = 1;
+                for (; rutAux != 0; rutAux /= 10)
+                {
+                    s = (s + rutAux % 10 * (9 - m++ % 6)) % 11;
+                }
+                if (dv == (char)(s != 0 ? s + 47 : 75))
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+            return validacion;
+        }
+
+        public bool validaRut2(string Rut)
+        {
+            bool validacion = false;
+            try
+            {
+                if (Rut.Length >= 9)
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return validacion;
+        }
+
+        public bool validaRut3(string Rut)
+        {
+            bool validacion = false;
+            try
+            {
+                string sTexto1 = txtRutAlumno.Text.Substring(0, 1);
+                string sTexto2 = txtRutAlumno.Text.Substring(1, 1);
+
+                if (sTexto1 != sTexto2)
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+
+            return validacion;
         }
     }
 }

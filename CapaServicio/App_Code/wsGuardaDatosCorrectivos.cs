@@ -59,7 +59,21 @@ public class wsGuardaDatosCorrectivos : System.Web.Services.WebService
         return auxMedida_Correctiva.buscaMedida_Correctiva(Cod_MC);
     }
 
-    public void actualizaMedida_Correctiva(Medida_Correctiva medida_Correctiva)
+    //public void actualizaMedida_Correctiva(Medida_Correctiva medida_Correctiva)
+    //{
+    //    ngMedida_Correctiva auxMedida_Correctiva = new ngMedida_Correctiva();
+    //    auxMedida_Correctiva.actualizarMedida_Correctiva(medida_Correctiva);
+    //}
+
+    [WebMethod]
+    public void eliminarMedidaCorrectiva(string Cod_MC)
+    {
+        ngMedida_Correctiva auxMedida_Correctiva = new ngMedida_Correctiva();
+        auxMedida_Correctiva.eliminarMedida_Correctiva(Cod_MC);
+    }
+
+    [WebMethod]
+    public void actualizarMedidaCorrectiva(Medida_Correctiva medida_Correctiva)
     {
         ngMedida_Correctiva auxMedida_Correctiva = new ngMedida_Correctiva();
         auxMedida_Correctiva.actualizarMedida_Correctiva(medida_Correctiva);

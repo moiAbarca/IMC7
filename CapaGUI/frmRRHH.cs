@@ -86,21 +86,58 @@ namespace CapaGUI
 
         private void txtRutRRHH_Leave(object sender, EventArgs e)
         {
+            
             ngRRHH ncar = new ngRRHH();
             RRHH ncar2 = new RRHH();
             ncar2 = ncar.buscaRRHH(txtRutRRHH.Text);
-            if (String.IsNullOrEmpty(ncar2.Rut_RRHH))
+
+            bool rut1 = validarRut(txtRutRRHH.Text);
+            bool rut2 = validaRut2(txtRutRRHH.Text);
+            bool rut3 = validaRut3(txtRutRRHH.Text);
+
+            try
             {
-                return;
+                if (rut1 == true && rut2 == true && rut3 == true)
+                {
+                    btnLimpiar.Enabled = true;
+                    if (String.IsNullOrEmpty(ncar2.Rut_RRHH))
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        txtRutRRHH.Text = ncar2.Rut_RRHH;
+                        txtNombre.Text = ncar2.Nombre;
+                        txtApellido.Text = ncar2.Apellido;
+                        dtFechaNacimiento.Value = ncar2.FechaNacimiento;
+                        cmbCodTipoRRHH.SelectedValue = ncar2.Cod_Tipo_RRHH;
+                        
+                    }
+                }
+                else
+                {
+                    btnLimpiar.Enabled = false;
+                    //bool cal = Limpiar();
+                    if (txtRutRRHH.Text.Length == 0 /*|| cal == true*/)
+                    {
+                        //txtNombre.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar un rut correcto");
+                        txtRutRRHH.Focus();
+                        
+                    }
+
+                }
             }
-            else
+            catch (Exception)
             {
-                txtRutRRHH.Text = ncar2.Rut_RRHH;
-                txtNombre.Text = ncar2.Nombre;
-                txtApellido.Text = ncar2.Apellido;
-                dtFechaNacimiento.Value = ncar2.FechaNacimiento;
-                cmbCodTipoRRHH.SelectedValue = ncar2.Cod_Tipo_RRHH;
+
+
             }
+
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -157,6 +194,109 @@ namespace CapaGUI
         {
             frmLstRRHH form = new frmLstRRHH();
             form.ShowDialog();
+        }
+
+        public bool validarRut(string rut)
+        {
+
+            bool validacion = false;
+            try
+            {
+                rut = rut.ToUpper();
+                rut = rut.Replace(".", "");
+                rut = rut.Replace("-", "");
+                int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+
+                char dv = char.Parse(rut.Substring(rut.Length - 1, 1));
+
+                int m = 0, s = 1;
+                for (; rutAux != 0; rutAux /= 10)
+                {
+                    s = (s + rutAux % 10 * (9 - m++ % 6)) % 11;
+                }
+                if (dv == (char)(s != 0 ? s + 47 : 75))
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+            return validacion;
+        }
+
+        public bool validaRut2(string Rut)
+        {
+            bool validacion = false;
+            try
+            {
+                if (Rut.Length >= 9)
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return validacion;
+        }
+
+        public bool validaRut3(string Rut)
+        {
+            bool validacion = false;
+            try
+            {
+                string sTexto1 = txtRutRRHH.Text.Substring(0, 1);
+                string sTexto2 = txtRutRRHH.Text.Substring(1, 1);
+
+                if (sTexto1 != sTexto2)
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+
+            return validacion;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //permite solamente letras
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //permite solamente letras
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtRutRRHH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

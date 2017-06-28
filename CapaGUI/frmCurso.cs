@@ -162,5 +162,35 @@ namespace CapaGUI
                 }
             }
         }
+
+        private void txtCod_Curso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNombreCurso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtJornada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using CapaDTO;
+using CapaNegocio;
+using System.Data;
 
 /// <summary>
 /// Descripción breve de wsEntregaResultadosHistoricos
@@ -22,9 +25,10 @@ public class wsEntregaResultadosHistoricos : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public string HelloWorld()
+    public DataSet EntregarResultadosHistoricos(string año)
     {
-        return "Hola a todos";
+        ngReportes report = new ngReportes();
+        return report.ReporteResultadosHistoricos(año);
     }
 
 }

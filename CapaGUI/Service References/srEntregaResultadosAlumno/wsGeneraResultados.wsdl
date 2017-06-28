@@ -2,17 +2,17 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="comparaIMC">
+      <s:element name="generaResultados">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="comparaIMCResponse">
+      <s:element name="generaResultadosResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="comparaIMCResult">
+            <s:element minOccurs="0" maxOccurs="1" name="generaResultadosResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -25,22 +25,22 @@
       </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="comparaIMCSoapIn">
-    <wsdl:part name="parameters" element="tns:comparaIMC" />
+  <wsdl:message name="generaResultadosSoapIn">
+    <wsdl:part name="parameters" element="tns:generaResultados" />
   </wsdl:message>
-  <wsdl:message name="comparaIMCSoapOut">
-    <wsdl:part name="parameters" element="tns:comparaIMCResponse" />
+  <wsdl:message name="generaResultadosSoapOut">
+    <wsdl:part name="parameters" element="tns:generaResultadosResponse" />
   </wsdl:message>
-  <wsdl:portType name="wsComparaIMCSoap">
-    <wsdl:operation name="comparaIMC">
-      <wsdl:input message="tns:comparaIMCSoapIn" />
-      <wsdl:output message="tns:comparaIMCSoapOut" />
+  <wsdl:portType name="wsGeneraResultadosSoap">
+    <wsdl:operation name="generaResultados">
+      <wsdl:input message="tns:generaResultadosSoapIn" />
+      <wsdl:output message="tns:generaResultadosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="wsComparaIMCSoap" type="tns:wsComparaIMCSoap">
+  <wsdl:binding name="wsGeneraResultadosSoap" type="tns:wsGeneraResultadosSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="comparaIMC">
-      <soap:operation soapAction="http://tempuri.org/comparaIMC" style="document" />
+    <wsdl:operation name="generaResultados">
+      <soap:operation soapAction="http://tempuri.org/generaResultados" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -49,10 +49,10 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="wsComparaIMCSoap12" type="tns:wsComparaIMCSoap">
+  <wsdl:binding name="wsGeneraResultadosSoap12" type="tns:wsGeneraResultadosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="comparaIMC">
-      <soap12:operation soapAction="http://tempuri.org/comparaIMC" style="document" />
+    <wsdl:operation name="generaResultados">
+      <soap12:operation soapAction="http://tempuri.org/generaResultados" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -61,12 +61,12 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="wsComparaIMC">
-    <wsdl:port name="wsComparaIMCSoap" binding="tns:wsComparaIMCSoap">
-      <soap:address location="http://localhost:7278/wsComparaIMC.asmx" />
+  <wsdl:service name="wsGeneraResultados">
+    <wsdl:port name="wsGeneraResultadosSoap" binding="tns:wsGeneraResultadosSoap">
+      <soap:address location="http://localhost:7278/wsGeneraResultados.asmx" />
     </wsdl:port>
-    <wsdl:port name="wsComparaIMCSoap12" binding="tns:wsComparaIMCSoap12">
-      <soap12:address location="http://localhost:7278/wsComparaIMC.asmx" />
+    <wsdl:port name="wsGeneraResultadosSoap12" binding="tns:wsGeneraResultadosSoap12">
+      <soap12:address location="http://localhost:7278/wsGeneraResultados.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

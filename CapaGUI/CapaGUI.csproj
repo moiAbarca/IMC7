@@ -156,6 +156,18 @@
     <Compile Include="frmMedidaCorrectiva.Designer.cs">
       <DependentUpon>frmMedidaCorrectiva.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteAlumno.Designer.cs">
+      <DependentUpon>frmReporteAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportesGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportesGeneral.Designer.cs">
+      <DependentUpon>frmReportesGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRRHH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,16 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\srComparaIMC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\srEntregaResultadosAlumno\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\srEntregaResultados\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -250,6 +272,12 @@
     <EmbeddedResource Include="frmMedidaCorrectiva.resx">
       <DependentUpon>frmMedidaCorrectiva.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteAlumno.resx">
+      <DependentUpon>frmReporteAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportesGeneral.resx">
+      <DependentUpon>frmReportesGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRRHH.resx">
       <DependentUpon>frmRRHH.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +307,8 @@
     </Compile>
     <None Include="Service References\srCalculaIMC\wsCalculaIMC.wsdl" />
     <None Include="Service References\srComparaIMC\wsComparaIMC.wsdl" />
+    <None Include="Service References\srEntregaResultadosAlumno\wsGeneraResultados.wsdl" />
+    <None Include="Service References\srEntregaResultados\wsEntregaResultadosHistoricos.wsdl" />
     <None Include="Service References\srGuardaDatosAlumnos\CapaGUI.srGuardaDatosAlumnos.Alumno.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -298,6 +328,8 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\srCalculaIMC\" />
     <WCFMetadataStorage Include="Service References\srComparaIMC\" />
+    <WCFMetadataStorage Include="Service References\srEntregaResultadosAlumno\" />
+    <WCFMetadataStorage Include="Service References\srEntregaResultados\" />
     <WCFMetadataStorage Include="Service References\srGuardaDatosAlumnos\" />
     <WCFMetadataStorage Include="Service References\srGuardaDatosCorrectivos\" />
   </ItemGroup>
@@ -367,6 +399,74 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\srGuardaDatosCorrectivos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srEntregaResultados\wsEntregaResultadosHistoricos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srEntregaResultados\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srEntregaResultados\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srEntregaResultados\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srEntregaResultadosAlumno\wsGeneraResultados.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srEntregaResultadosAlumno\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srEntregaResultadosAlumno\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\srEntregaResultadosAlumno\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

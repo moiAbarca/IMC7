@@ -75,5 +75,17 @@ namespace CapaGUI
             frmRRHH pCliente = new frmRRHH();
             pCliente.ShowDialog();
         }
+
+        private void reporteAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteAlumno alu = new frmReporteAlumno();
+            alu.ShowDialog();
+        }
+
+        private void reportesGeneralesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReportesGeneral rpg = new frmReportesGeneral();
+            rpg.ShowDialog();
+        }
     }
 }

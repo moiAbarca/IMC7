@@ -170,5 +170,35 @@ namespace CapaGUI
             frmLstListaCurso frm = new frmLstListaCurso();
             frm.ShowDialog();
         }
+
+        private void txtIdListaCurso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtAno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solo números
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && e.KeyChar != (char)Keys.Return)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtSemestre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite todo menos '
+            if (e.KeyChar == (char)39)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

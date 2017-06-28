@@ -9,7 +9,7 @@ namespace CapaConexion
 {
     public class Conexion
     {
-        private string sConnectionString = "Server=127.0.0.1;Database=IMC;Trusted_Connection=True;";
+        private string sConnectionString = "Data Source=LALO-PC\\SQLEXPRESS;Initial Catalog=IMC;Integrated Security=True";
 
         public void ConectarBD()
         {

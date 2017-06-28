@@ -44,6 +44,9 @@
             this.mantenedorRRHHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rRHHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteAlumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesGeneralesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +72,8 @@
             this.mantenedorColegioToolStripMenuItem,
             this.mantenedorAlumnoToolStripMenuItem,
             this.mantenedorMedidasCorrectivasToolStripMenuItem,
-            this.mantenedorRRHHToolStripMenuItem});
+            this.mantenedorRRHHToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(416, 24);
@@ -89,21 +93,21 @@
             // datosColegioToolStripMenuItem
             // 
             this.datosColegioToolStripMenuItem.Name = "datosColegioToolStripMenuItem";
-            this.datosColegioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.datosColegioToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.datosColegioToolStripMenuItem.Text = "Datos Colegio";
             this.datosColegioToolStripMenuItem.Click += new System.EventHandler(this.datosColegioToolStripMenuItem_Click);
             // 
             // cursoToolStripMenuItem
             // 
             this.cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
-            this.cursoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cursoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.cursoToolStripMenuItem.Text = "Curso";
             this.cursoToolStripMenuItem.Click += new System.EventHandler(this.cursoToolStripMenuItem_Click);
             // 
             // listaCursoToolStripMenuItem
             // 
             this.listaCursoToolStripMenuItem.Name = "listaCursoToolStripMenuItem";
-            this.listaCursoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listaCursoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.listaCursoToolStripMenuItem.Text = "Lista Curso";
             this.listaCursoToolStripMenuItem.Click += new System.EventHandler(this.listaCursoToolStripMenuItem_Click);
             // 
@@ -176,6 +180,29 @@
             this.rRHHToolStripMenuItem.Text = "RRHH";
             this.rRHHToolStripMenuItem.Click += new System.EventHandler(this.rRHHToolStripMenuItem_Click);
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteAlumnosToolStripMenuItem,
+            this.reportesGeneralesToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // reporteAlumnosToolStripMenuItem
+            // 
+            this.reporteAlumnosToolStripMenuItem.Name = "reporteAlumnosToolStripMenuItem";
+            this.reporteAlumnosToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.reporteAlumnosToolStripMenuItem.Text = "Reporte Alumnos";
+            this.reporteAlumnosToolStripMenuItem.Click += new System.EventHandler(this.reporteAlumnosToolStripMenuItem_Click);
+            // 
+            // reportesGeneralesToolStripMenuItem
+            // 
+            this.reportesGeneralesToolStripMenuItem.Name = "reportesGeneralesToolStripMenuItem";
+            this.reportesGeneralesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.reportesGeneralesToolStripMenuItem.Text = "Reportes Generales";
+            this.reportesGeneralesToolStripMenuItem.Click += new System.EventHandler(this.reportesGeneralesToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,5 +240,8 @@
         private System.Windows.Forms.ToolStripMenuItem mantenedorRRHHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rRHHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteAlumnosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesGeneralesToolStripMenuItem;
     }
 }

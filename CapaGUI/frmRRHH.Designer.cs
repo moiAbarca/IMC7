@@ -55,26 +55,29 @@
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(111, 92);
-            this.txtApellido.MaxLength = 50;
+            this.txtApellido.MaxLength = 15;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(242, 20);
             this.txtApellido.TabIndex = 39;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(111, 52);
-            this.txtNombre.MaxLength = 50;
+            this.txtNombre.MaxLength = 15;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(242, 20);
             this.txtNombre.TabIndex = 38;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtRutRRHH
             // 
             this.txtRutRRHH.Location = new System.Drawing.Point(111, 12);
-            this.txtRutRRHH.MaxLength = 50;
+            this.txtRutRRHH.MaxLength = 10;
             this.txtRutRRHH.Name = "txtRutRRHH";
             this.txtRutRRHH.Size = new System.Drawing.Size(242, 20);
             this.txtRutRRHH.TabIndex = 37;
+            this.txtRutRRHH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRutRRHH_KeyPress);
             this.txtRutRRHH.Leave += new System.EventHandler(this.txtRutRRHH_Leave);
             // 
             // label4

@@ -63,6 +63,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(149, 20);
             this.txtDescripcion.TabIndex = 51;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // label6
             // 
@@ -94,10 +95,11 @@
             // txtCodMC
             // 
             this.txtCodMC.Location = new System.Drawing.Point(108, 10);
-            this.txtCodMC.MaxLength = 50;
+            this.txtCodMC.MaxLength = 15;
             this.txtCodMC.Name = "txtCodMC";
             this.txtCodMC.Size = new System.Drawing.Size(121, 20);
             this.txtCodMC.TabIndex = 45;
+            this.txtCodMC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodMC_KeyPress);
             this.txtCodMC.Leave += new System.EventHandler(this.txtCodMC_Leave);
             // 
             // label4

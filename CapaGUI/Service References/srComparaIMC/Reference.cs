@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace CapaGUI.srComparaIMC {
+    using System.Data;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -16,10 +17,11 @@ namespace CapaGUI.srComparaIMC {
     public interface wsComparaIMCSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/comparaIMC", ReplyAction="*")]
-        float comparaIMC(float peso, float talla);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet comparaIMC(string rut);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/comparaIMC", ReplyAction="*")]
-        System.Threading.Tasks.Task<float> comparaIMCAsync(float peso, float talla);
+        System.Threading.Tasks.Task<System.Data.DataSet> comparaIMCAsync(string rut);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +51,12 @@ namespace CapaGUI.srComparaIMC {
                 base(binding, remoteAddress) {
         }
         
-        public float comparaIMC(float peso, float talla) {
-            return base.Channel.comparaIMC(peso, talla);
+        public System.Data.DataSet comparaIMC(string rut) {
+            return base.Channel.comparaIMC(rut);
         }
         
-        public System.Threading.Tasks.Task<float> comparaIMCAsync(float peso, float talla) {
-            return base.Channel.comparaIMCAsync(peso, talla);
+        public System.Threading.Tasks.Task<System.Data.DataSet> comparaIMCAsync(string rut) {
+            return base.Channel.comparaIMCAsync(rut);
         }
     }
 }

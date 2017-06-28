@@ -42,18 +42,20 @@
             // txtNombre_TipoCargo
             // 
             this.txtNombre_TipoCargo.Location = new System.Drawing.Point(113, 48);
-            this.txtNombre_TipoCargo.MaxLength = 50;
+            this.txtNombre_TipoCargo.MaxLength = 30;
             this.txtNombre_TipoCargo.Name = "txtNombre_TipoCargo";
             this.txtNombre_TipoCargo.Size = new System.Drawing.Size(242, 20);
             this.txtNombre_TipoCargo.TabIndex = 19;
+            this.txtNombre_TipoCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_TipoCargo_KeyPress);
             // 
             // txtCod_Tipo_RRHH
             // 
             this.txtCod_Tipo_RRHH.Location = new System.Drawing.Point(113, 6);
-            this.txtCod_Tipo_RRHH.MaxLength = 50;
+            this.txtCod_Tipo_RRHH.MaxLength = 15;
             this.txtCod_Tipo_RRHH.Name = "txtCod_Tipo_RRHH";
             this.txtCod_Tipo_RRHH.Size = new System.Drawing.Size(242, 20);
             this.txtCod_Tipo_RRHH.TabIndex = 18;
+            this.txtCod_Tipo_RRHH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_Tipo_RRHH_KeyPress);
             this.txtCod_Tipo_RRHH.Leave += new System.EventHandler(this.txtCod_Tipo_RRHH_Leave);
             // 
             // label2

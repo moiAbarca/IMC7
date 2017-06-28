@@ -24,6 +24,15 @@ public class wsComparaIMC : System.Web.Services.WebService
         //InitializeComponent(); 
     }
 
-   
+
+    [WebMethod]
+    public DataSet comparaIMC(string rut)
+    {
+        ngReportes report = new ngReportes();
+        return report.ComparaIMC(rut);  
+               
+    }
+
+
 
 }

@@ -86,6 +86,7 @@
             this.txtCod_Colegio.Name = "txtCod_Colegio";
             this.txtCod_Colegio.Size = new System.Drawing.Size(242, 20);
             this.txtCod_Colegio.TabIndex = 4;
+            this.txtCod_Colegio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_Colegio_KeyPress);
             this.txtCod_Colegio.Leave += new System.EventHandler(this.txtCod_Colegio_Leave);
             // 
             // txtNombre
@@ -95,6 +96,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(242, 20);
             this.txtNombre.TabIndex = 5;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtDireccion
             // 
@@ -103,14 +105,16 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(242, 20);
             this.txtDireccion.TabIndex = 6;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(104, 123);
-            this.txtTelefono.MaxLength = 50;
+            this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(242, 20);
             this.txtTelefono.TabIndex = 7;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // btnLimpiar
             // 

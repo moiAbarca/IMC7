@@ -46,26 +46,29 @@
             // txtJornada
             // 
             this.txtJornada.Location = new System.Drawing.Point(104, 94);
-            this.txtJornada.MaxLength = 50;
+            this.txtJornada.MaxLength = 20;
             this.txtJornada.Name = "txtJornada";
             this.txtJornada.Size = new System.Drawing.Size(242, 20);
             this.txtJornada.TabIndex = 16;
+            this.txtJornada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJornada_KeyPress);
             // 
             // txtNombreCurso
             // 
             this.txtNombreCurso.Location = new System.Drawing.Point(104, 57);
-            this.txtNombreCurso.MaxLength = 50;
+            this.txtNombreCurso.MaxLength = 5;
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(242, 20);
             this.txtNombreCurso.TabIndex = 15;
+            this.txtNombreCurso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreCurso_KeyPress);
             // 
             // txtCod_Curso
             // 
             this.txtCod_Curso.Location = new System.Drawing.Point(104, 20);
-            this.txtCod_Curso.MaxLength = 50;
+            this.txtCod_Curso.MaxLength = 15;
             this.txtCod_Curso.Name = "txtCod_Curso";
             this.txtCod_Curso.Size = new System.Drawing.Size(242, 20);
             this.txtCod_Curso.TabIndex = 14;
+            this.txtCod_Curso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_Curso_KeyPress);
             this.txtCod_Curso.Leave += new System.EventHandler(this.txtCod_Curso_Leave);
             // 
             // label3

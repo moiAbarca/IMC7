@@ -30,7 +30,6 @@
         {
             this.gboxCabecera = new System.Windows.Forms.GroupBox();
             this.cmbRutRRHH = new System.Windows.Forms.ComboBox();
-            this.cmbRutAlumno = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -68,14 +67,15 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.txtRutAlumno = new System.Windows.Forms.TextBox();
             this.gboxCabecera.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxCabecera
             // 
+            this.gboxCabecera.Controls.Add(this.txtRutAlumno);
             this.gboxCabecera.Controls.Add(this.cmbRutRRHH);
-            this.gboxCabecera.Controls.Add(this.cmbRutAlumno);
             this.gboxCabecera.Controls.Add(this.button1);
             this.gboxCabecera.Controls.Add(this.button2);
             this.gboxCabecera.Controls.Add(this.button3);
@@ -111,15 +111,6 @@
             this.cmbRutRRHH.Name = "cmbRutRRHH";
             this.cmbRutRRHH.Size = new System.Drawing.Size(121, 21);
             this.cmbRutRRHH.TabIndex = 51;
-            // 
-            // cmbRutAlumno
-            // 
-            this.cmbRutAlumno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRutAlumno.FormattingEnabled = true;
-            this.cmbRutAlumno.Location = new System.Drawing.Point(355, 18);
-            this.cmbRutAlumno.Name = "cmbRutAlumno";
-            this.cmbRutAlumno.Size = new System.Drawing.Size(128, 21);
-            this.cmbRutAlumno.TabIndex = 50;
             // 
             // button1
             // 
@@ -213,6 +204,7 @@
             this.txtPeso.Size = new System.Drawing.Size(128, 20);
             this.txtPeso.TabIndex = 40;
             this.txtPeso.TextChanged += new System.EventHandler(this.txtPeso_TextChanged);
+            this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
             // 
             // txtEstatura
             // 
@@ -222,6 +214,7 @@
             this.txtEstatura.Size = new System.Drawing.Size(128, 20);
             this.txtEstatura.TabIndex = 39;
             this.txtEstatura.TextChanged += new System.EventHandler(this.txtEstatura_TextChanged);
+            this.txtEstatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstatura_KeyPress);
             // 
             // label6
             // 
@@ -262,11 +255,12 @@
             // txtCod_Ficha
             // 
             this.txtCod_Ficha.Location = new System.Drawing.Point(103, 22);
-            this.txtCod_Ficha.MaxLength = 50;
+            this.txtCod_Ficha.MaxLength = 15;
             this.txtCod_Ficha.Name = "txtCod_Ficha";
             this.txtCod_Ficha.Size = new System.Drawing.Size(121, 20);
             this.txtCod_Ficha.TabIndex = 27;
             this.txtCod_Ficha.TextChanged += new System.EventHandler(this.txtCod_Ficha_TextChanged);
+            this.txtCod_Ficha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_Ficha_KeyPress);
             this.txtCod_Ficha.Leave += new System.EventHandler(this.txtCod_Ficha_Leave);
             // 
             // label4
@@ -444,10 +438,11 @@
             // txtCodDetalleFicha
             // 
             this.txtCodDetalleFicha.Location = new System.Drawing.Point(115, 66);
-            this.txtCodDetalleFicha.MaxLength = 50;
+            this.txtCodDetalleFicha.MaxLength = 10;
             this.txtCodDetalleFicha.Name = "txtCodDetalleFicha";
             this.txtCodDetalleFicha.Size = new System.Drawing.Size(121, 20);
             this.txtCodDetalleFicha.TabIndex = 46;
+            this.txtCodDetalleFicha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDetalleFicha_KeyPress);
             this.txtCodDetalleFicha.Leave += new System.EventHandler(this.txtCodDetalleFicha_Leave);
             // 
             // label12
@@ -476,6 +471,16 @@
             this.label14.Size = new System.Drawing.Size(89, 13);
             this.label14.TabIndex = 43;
             this.label14.Text = "Código Det Ficha";
+            // 
+            // txtRutAlumno
+            // 
+            this.txtRutAlumno.Location = new System.Drawing.Point(355, 21);
+            this.txtRutAlumno.MaxLength = 10;
+            this.txtRutAlumno.Name = "txtRutAlumno";
+            this.txtRutAlumno.Size = new System.Drawing.Size(128, 20);
+            this.txtRutAlumno.TabIndex = 52;
+            this.txtRutAlumno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRutAlumno_KeyPress);
+            this.txtRutAlumno.Leave += new System.EventHandler(this.txtRutAlumno_Leave);
             // 
             // frmFichaAlumno
             // 
@@ -535,7 +540,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ComboBox cmbRutRRHH;
-        private System.Windows.Forms.ComboBox cmbRutAlumno;
         private System.Windows.Forms.TextBox txtCodCabeceraFicha;
+        private System.Windows.Forms.TextBox txtRutAlumno;
     }
 }
